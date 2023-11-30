@@ -148,15 +148,16 @@ b {
 }
 
 .gender {
-  width: 25%;
+  width: 120px;
+  height: 50px;
   border: 1px solid #ddd;
   border-radius: 3px;
   display: flex;
 }
 
 .male {
-  width: 50%;
-  height: 100%;
+  width: 60px;
+  height: 50px;
   border-radius: 3px 0 0 3px;
   border-right: 1px solid #ddd;
   display: flex;
@@ -168,8 +169,8 @@ b {
 }
 
 .female {
-  width: 50%;
-  height: 100%;
+  width: 60px;
+  height: 50px;
   border-radius: 0 3px 3px 0;
   display: flex;
   justify-content: center;
