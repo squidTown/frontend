@@ -1,0 +1,141 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login {
+  border-radius: 8px;
+  border: 3px rgb(215, 215, 215) solid;
+  width: 35%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.wellcomeText {
+  margin-top: 5%;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.loginContainer {
+  margin-top: 7%;
+  width: 80%;
+  height: 80%;
+}
+
+.id {
+  border: 2px rgb(226, 226, 226) solid;
+  width: 100%;
+  height: 15%;
+  display: flex;
+}
+
+.idImage {
+  width: 17%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.id>input {
+  border: none;
+  outline: none;
+  padding: 0 1%;
+  font-size: 16px;
+  width: 75%;
+}
+
+.passwd {
+  border: 2px rgb(226, 226, 226) solid;
+  margin-top: 2%;
+  width: 100%;
+  height: 15%;
+  display: flex;
+}
+
+.pwImage {
+  width: 17%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.passwd>input {
+  border: none;
+  outline: none;
+  padding: 0 1%;
+  font-size: 16px;
+  width: 65%;
+}
+
+.underBar {
+  margin-top: 4%;
+  width: 100%;
+  height: 8%;
+}
+
+.underBarContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.underBarCheckbox {
+  width: 50%;
+  height: 100%;
+  font-size: 13px;
+}
+
+.lostPw {
+  cursor: pointer;
+  color: #5467f5;
+  font-weight: 500;
+  font-size: 13px;
+}
+
+.registerContainer {
+  width: 100%;
+  height: 20%;
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.registerText {
+  color: #b4b4b4;
+  font-size: 14px;
+}
+
+.register {
+  color: #5467f5;
+  padding-top: 2%;
+  cursor: pointer;
+}
+
+.loginButton {
+  width: 100%;
+  height: 15%;
+  background-color: #5467f5;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-top: 5%;
+  font-size: 18px;
+  color: white;
+}
+
+.register>a {
+  all: unset;
+}

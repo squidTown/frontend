@@ -1,0 +1,284 @@
+p {
+  font-size: 13px;
+}
+
+b {
+  color: red;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f5f6f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  width: 40%;
+  height: 90%;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0px 0px 5px 1px #c2c2c2;
+}
+
+.registerBox {
+  width: 75%;
+  height: 100%;
+}
+
+.UserText {
+  width: 100%;
+  height: 10%;
+  margin-top: 10%;
+  margin-bottom: 10px;
+}
+
+.UserTextBig {
+  font-size: 18px;
+  font-weight: 600;
+  width: 100%;
+  height: 50%;
+}
+
+.UserTextSmall {
+  font-size: 13px;
+  width: 100%;
+  height: 50%;
+}
+
+.inputBox {
+  width: 100%;
+  height: 65%;
+}
+
+.idWrapperBox {
+  width: 100%;
+  height: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.idInput {
+  width: 58%;
+  height: 100%;
+  border: 1px solid #ddd;
+  padding: 3% 4.5%;
+  border-radius: 3px;
+}
+
+.idBtn {
+  background-color: #5467f5;
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: white;
+  width: 30%;
+  padding: 3% 4.5%;
+  border-radius: 3px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.idText {
+  margin-bottom: 5px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.totalWrapperBox {
+  width: 100%;
+  height: 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.totalInput {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
+  outline: none;
+  padding: 3% 4.5%;
+  border-radius: 3px;
+}
+
+.pwd {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.pwdInput {
+  width: 70%;
+  height: 100%;
+  border: none;
+  outline: none;
+  padding: 3% 4.5%;
+  border-radius: 3px;
+}
+
+.eye {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: rgb(127, 127, 127);
+  cursor: pointer;
+}
+
+.nameInput {
+  width: 60%;
+  height: 100%;
+  border: 1px solid #ddd;
+  outline: none;
+  padding: 3% 4.5%;
+  border-radius: 3px;
+}
+
+.gender {
+  width: 25%;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  display: flex;
+}
+
+.male {
+  width: 50%;
+  height: 100%;
+  border-radius: 3px 0 0 3px;
+  border-right: 1px solid #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: rgb(93, 93, 228);
+  cursor: pointer;
+}
+
+.female {
+  width: 50%;
+  height: 100%;
+  border-radius: 0 3px 3px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  color: rgb(253, 145, 163);
+  cursor: pointer;
+}
+
+.g1 {
+  background-color: rgb(93, 93, 228);
+  color: white;
+}
+
+.g2 {
+  background-color: rgb(253, 145, 163);
+  color: white;
+}
+
+.totalWrapper {
+  margin-bottom: 10px;
+}
+
+.userWrapperBox {
+  width: 100%;
+  height: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.addressWrapperBox {
+  width: 91%;
+  height: 8%;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.addressInput {
+  margin-top: 2%;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
+  padding: 3% 4.5%;
+  border-radius: 3px;
+}
+
+.dayInput {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ddd;
+  padding: 3% 4.5%;
+  border-radius: 3px;
+  margin-left: 3%;
+}
+
+.wrapper::-webkit-scrollbar {
+  width: 7px;
+}
+
+.wrapper::-webkit-scrollbar-thumb {
+  max-height: 100px;
+  /* 스크롤바의 길이 */
+  background: #848484;
+  /* 스크롤바의 색상 */
+  border-radius: 10px;
+}
+
+.wrapper::-webkit-scrollbar-track {
+  background: #a5a5a547;
+  /*스크롤바 뒷 배경 색상*/
+}
+
+.bottomWrapper {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomBox {
+  width: 50%;
+  height: 100%;
+}
+
+.joinBtn {
+  background-color: #5467f5;
+  width: 100%;
+  height: 90%;
+  color: white;
+  border-radius: 3px;
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+@media screen and (max-width: 980px) {
+  .wrapper {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media screen and (max-height: 450px) {
+  .wrapper {
+    width: 100%;
+    height: 920px;
+  }
+}

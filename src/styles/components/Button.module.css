@@ -1,0 +1,29 @@
+.btn {
+  font-weight: bold;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}
+
+.button-full {
+  color: white;
+  background-color: #5467f5;
+}
+
+.button-empty {
+  color: #5467f5;
+  background-color: white;
+  box-shadow: 0px 0px 3px 1.5px rgb(195, 195, 195);
+}
+
+.button-big {
+  width: 250px;
+  height: 60px;
+  font-size: 16px;
+}
+
+.button-middle {
+  width: 120px;
+  height: 45px;
+  font-size: 14px;
+}
