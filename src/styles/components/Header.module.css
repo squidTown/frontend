@@ -1,0 +1,25 @@
+.container {
+  width: 100vw;
+  height: 7vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0px 1px 2px rgb(210, 210, 210);
+  z-index: 30;
+}
+
+.location {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #454545;
+}
+
+#btn {
+  margin-left: 1%;
+  color: #868686;
+  cursor: pointer;
+}

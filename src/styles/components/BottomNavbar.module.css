@@ -1,0 +1,54 @@
+.container {
+  width: 100%;
+  height: 8vh;
+  background: #fbfbfb;
+  border-top: 1px solid #e0e0e0;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.btnContainer {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  width: 100%;
+  max-width: 768px;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.btnWrapper {
+  padding: 10px;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.btnIcon {
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.btnIcon svg {
+  font-size: 18px;
+  color: #a1a3a5;
+}
+
+.btnText {
+  font-size: 12px;
+  line-height: 115%;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: -0.2px;
+  color: rgb(88, 93, 104);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.activeIcon svg, .activeText {
+  color: #5467f5;
+}

@@ -1,0 +1,28 @@
+.map {
+  width: 100vw;
+  height: 100vh;
+}
+
+.now {
+  position: absolute;
+  bottom: 100px;
+  right: 30px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  z-index: 100;
+  border: 1px solid rgb(179, 179, 179);
+  outline: none;
+  background-color: rgb(255, 255, 255);
+}
+
+.now > span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 30px;
+  cursor: pointer;
+  color: rgb(100, 100, 100)  ;
+}
