@@ -66,22 +66,22 @@ const Main = () => {
         <div className={styles.inner}>
           <div className={styles.sliderContainer}>
             <Slider {...settings}>
-              <SliderItem data="sd"/>
-              <div className={`${styles.color2} ${styles.content}`} />
-              <div className={`${styles.color1} ${styles.content}`} />
-              <div className={`${styles.color2} ${styles.content}`} />
-              <div className={`${styles.color1} ${styles.content}`} />
-              <div className={`${styles.color2} ${styles.content}`} />
+              <SliderItem color={"color1"} />
+              <SliderItem color={"color2"} />
+              <SliderItem color={"color1"} />
+              <SliderItem color={"color2"} />
+              <SliderItem color={"color1"} />
+              <SliderItem color={"color2"} />
             </Slider>
           </div>
           <div className={styles.col}>
             <div className={styles.row}>
-              <Banner banner={"banner1"} path={"academy"} />
-              <Banner banner={"banner2"} path={"work"}/>
+              <Banner bannerWidth={"longBanner"} bannerColor={"bannerColor1"} path={"academy"} />
+              <Banner bannerWidth={"shortBanner"} bannerColor={"bannerColor2"} path={"work"} />
             </div>
             <div className={styles.row}>
-              <Banner banner={"banner2"} path={"teacher"} />
-              <Banner banner={"banner1"} path={"map"} />
+              <Banner bannerWidth={"shortBanner"} bannerColor={"bannerColor3"} path={"teacher"} />
+              <Banner bannerWidth={"longBanner"} bannerColor={"bannerColor4"} path={"map"} />
             </div>
           </div>
         </div>

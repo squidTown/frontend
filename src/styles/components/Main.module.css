@@ -98,35 +98,35 @@
 .academy {
   width: 100%;
   height: 100%;
-  background-image: url("../../images/teacher.png");
+  background-image: url("../../images/test1.png");
   background-position: right bottom;
-  background-size: 90%;
+  background-size: 70%;
   background-repeat: no-repeat;
 }
 
 .work {
   width: 100%;
   height: 100%;
-  background-image: url("../../images/teacher.png");
+  background-image: url("../../images/test4.png");
   background-position: right bottom;
-  background-size: 90%;
+  background-size: 60%;
   background-repeat: no-repeat;
 }
 
 .teacher {
   width: 100%;
   height: 100%;
-  background-image: url("../../images/teacher.png");
+  background-image: url("../../images/test3.png");
   background-position: right bottom;
-  background-size: 90%;
+  background-size: 80%;
   background-repeat: no-repeat;
 }
 
 .map {
   width: 100%;
   height: 100%;
-  background-image: url("../../images/teacher.png");
+  background-image: url("../../images/test2.png");
   background-position: right bottom;
-  background-size: 90%;
+  background-size: 70%;
   background-repeat: no-repeat;
 }
