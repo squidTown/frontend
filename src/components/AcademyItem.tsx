@@ -8,6 +8,8 @@ const AcademyItem = (props: {
   toggleContainer: any;
   setNowState: React.Dispatch<React.SetStateAction<any>>;
 }) => {
+  console.log(props.list)
+
   return (
     <div
       className={styles.container}

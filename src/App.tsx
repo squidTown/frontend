@@ -9,6 +9,7 @@ import { Login } from './pages/Login'
 import { Register } from './pages/Register'
 import UserInfoAlter from './pages/UserInfoAlter'
 import { EmailCheck } from './pages/EmailCheck'
+import Academy from './pages/Academy'
 
 export interface UserInfo {
   userId: number;
@@ -31,7 +32,7 @@ export type AcademyType = {
 };
 
 const App = () => {
-  const [locations, setLocations] = useState("경상북도 의성군 봉양면");
+  const [locations, setLocations] = useState("경북 의성군 봉양면 화전리");
   const academyList: AcademyType[] = location.positions;
   const [citation, setCitation] = useState<string>('인증번호 발송')
 
@@ -45,6 +46,7 @@ const App = () => {
         <Route path='/register' element={<Register citation={citation} />} />
         <Route path='/alteruser/:id' element={<UserInfoAlter />} />
         <Route path='/emailCheck/:email' element={<EmailCheck setCitation={setCitation} />} />
+        <Route path='/academy' element={<Academy />} />
       </Routes>
     </div>
   )
