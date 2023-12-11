@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import containers from "../styles/pages/Container.module.css";
+import styles from '../styles/components/AcademyList.module.css'
 import location from "../assets/json/location.json";
 import AcademyItem from "./AcademyItem";
 
@@ -7,15 +8,12 @@ const AcademyList = () => {
   const [showDetail, setShowDetail] = useState(false);
   const [academyName, setAcademyName] = useState<string>("name");
   const [academyAddress, setAcademyAddress] = useState<string>("address");
-  const [nowState, setNowState] = useState({
-    center: {
-      lat: 33.450701,
-      lng: 126.570667,
-    },
-    errMsg: null,
-    isLoading: true,
-    isPanto: true,
-  });
+
+  useEffect(() => {
+    if (showDetail) {
+      console.log(academyName, academyAddress);
+    }
+  }, [showDetail, academyName, academyAddress]);
 
   const toggleContainer = (name: string, address: string) => {
     setAcademyName(name);
@@ -23,15 +21,14 @@ const AcademyList = () => {
   };
 
   return (
-    <div>
-      <div className={containers.container}>
-        <div className={containers.inner}>
+    <div className={containers.container}>
+      <div className={containers.inner}>
+        <div className={styles.container}>
           {location.positions.map((element) => (
             <AcademyItem
               list={element}
               setShowDetail={setShowDetail}
               toggleContainer={toggleContainer}
-              setNowState={setNowState}
             />
           ))}
         </div>

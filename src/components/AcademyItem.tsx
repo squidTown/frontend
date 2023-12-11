@@ -6,19 +6,18 @@ const AcademyItem = (props: {
   list: AcademyType;
   setShowDetail: React.Dispatch<React.SetStateAction<boolean>>;
   toggleContainer: any;
-  setNowState: React.Dispatch<React.SetStateAction<any>>;
+  setNowState?: React.Dispatch<React.SetStateAction<any>>;
 }) => {
-  console.log(props.list)
-
   return (
     <div
       className={styles.container}
       onClick={() => {
         props.setShowDetail(true);
         props.toggleContainer(props.list.name, props.list.location);
-        props.setNowState({
-          center: { lat: props.list.lat, lng: props.list.lng },
-        });
+        if (props.setNowState)
+          props.setNowState({
+            center: { lat: props.list.lat, lng: props.list.lng },
+          });
       }}
     >
       <div className={styles.image}></div>

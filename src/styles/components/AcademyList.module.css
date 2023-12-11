@@ -1,0 +1,13 @@
+.container {
+  width: 90%;
+  height: 80%;
+  margin-top: 10%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  width: 50%;
+  height: 30%;
+}
