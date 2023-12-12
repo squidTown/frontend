@@ -2,9 +2,10 @@
   width: 90%;
   height: 80%;
   margin-top: 10%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  gap: 10px;
   justify-content: center;
+  grid-template-columns: repeat(2, minmax(0px, 1fr));
 }
 
 .item {

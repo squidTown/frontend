@@ -12,13 +12,15 @@ const LeftNavbar = (props: {
   return (
     <div className={styles.leftnav}>
       {props.list.map((value) => (
-        <AcademyItem
-          key={`map-${value.id}`}
-          list={value}
-          setShowDetail={props.setShowDetail}
-          toggleContainer={props.toggleContainer}
-          setNowState={props.setNowState}
-        />
+        <div className={styles.item}>
+          <AcademyItem
+            key={`map-${value.id}`}
+            list={value}
+            setShowDetail={props.setShowDetail}
+            toggleContainer={props.toggleContainer}
+            setNowState={props.setNowState}
+          />
+        </div>
       ))}
     </div>
   );
