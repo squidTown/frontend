@@ -12,6 +12,7 @@ import { EmailCheck } from './pages/EmailCheck'
 import TeachInfo from './pages/TeachInfo'
 import Academy from './pages/Academy'
 import Detail from './pages/Detail'
+import TeachList from './pages/TeachList'
 
 export interface UserInfo {
   userId: number;
@@ -49,7 +50,8 @@ const App = () => {
         <Route path='/register' element={<Register citation={citation} />} />
         <Route path='/alteruser/:id' element={<UserInfoAlter />} />
         <Route path='/emailCheck/:email' element={<EmailCheck setCitation={setCitation} />} />
-        <Route path='/teachInfo' element={<TeachInfo />} />
+        <Route path='/teacher' element={<TeachList />} />
+        <Route path='/teacher/:id' element={<TeachInfo />} />
         <Route path='/academy' element={<Academy />} />
         <Route path='/academy/:id' element={<Detail />} />
       </Routes>

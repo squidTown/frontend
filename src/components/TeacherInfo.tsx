@@ -4,7 +4,7 @@ import styles from '../styles/components/TeacherInfo.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
-const TeacherInfo = () => {
+const TeacherInfo = (props: { id: any }) => {
   return (
     <div className={containers.container}>
       <div className={containers.inner}>
