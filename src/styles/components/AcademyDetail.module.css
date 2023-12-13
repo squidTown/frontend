@@ -1,0 +1,91 @@
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  padding-bottom: 20%;
+}
+
+.container::-webkit-scrollbar {
+  width: 0;
+}
+
+.prev {
+  font-size: 27px;
+  cursor: pointer;
+  font-weight: bold;
+  position: absolute;
+  z-index: 100;
+  top: 10px;
+  left: 10px;
+  color: white;
+}
+
+.wrapImg {
+  width: 100%;
+  height: 300px;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.img {
+  width: 100%;
+  height: 50%;
+  z-index: 30;
+  position: relative;
+  background-image: url('../../assets/img/—Pngtree—apartment icon_4359969.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.inner {
+  width: 90%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 31px;
+  font-weight: bold;
+  margin: 20px 0 5px 0;
+}
+
+.tag {
+  width: 100%;
+  height: 100%;
+  margin: 5% 0;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.description {
+  width: 96%;
+  background-color: #fbfbfb;
+  border: 1px solid #eee;
+  color: #494d56;
+  margin: 10px 0 10px 0;
+  padding: 3% 2% 3% 2%;
+  border-radius: 5px;
+}
+
+.career {
+  width: 96%;
+  margin: 10px 0 10px 0;
+  padding: 3% 2% 3% 2%;
+}
+
+hr {
+  margin: 3% 0;
+}

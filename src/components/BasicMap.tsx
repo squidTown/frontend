@@ -97,10 +97,12 @@ const BasicMap = (props: {
       >
         {positions.map((pos: AcademyType) => (
           <EventMarkerContainer
-            key={`EventMarker-${pos.lat}-${pos.lng}`}
+            key={`EventMarker-${pos.lat}-${pos.lng}-${pos.id}`}
             positionLat={pos.lat}
             positionLng={pos.lng}
             content={pos.name}
+            id={pos.id}
+            tags={pos.tag}
             setShowDetail={props.setShowDetail}
             toggleContainer={props.toggleContainer}
             list={props.list}

@@ -8,6 +8,7 @@
 .button-full {
   color: white;
   background-color: #5467f5;
+  transition: all ease-in .05s;
 }
 
 .button-empty {
@@ -26,4 +27,13 @@
   width: 120px;
   height: 45px;
   font-size: 14px;
+}
+
+.button-empty:hover {
+  color: white;
+  background-color: #5467f5;
+}
+
+.button-full:hover {
+  transform: scale(1.05);
 }

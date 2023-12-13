@@ -12,4 +12,9 @@
   max-width: 900px;
   background-color: #fff;
   margin: 0 auto;
+  overflow: auto;
+}
+
+.inner::-webkit-scrollbar {
+  width: 0px;
 }
