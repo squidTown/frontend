@@ -11,6 +11,8 @@ const Map = (props: { academyList: AcademyType[], location: string, setLocation:
   const [showDetail, setShowDetail] = useState<boolean>(false);
   const [academyName, setAcademyName] = useState<string>("name");
   const [academyAddress, setAcademyAddress] = useState<string>("address");
+  const [academyId, setAcademyId] = useState<number>(1);
+  const [academyTags, setAcademyTags] = useState<string[]>([]);
   const [nowState, setNowState] = useState({
     center: {
       lat: 33.450701,
@@ -21,9 +23,11 @@ const Map = (props: { academyList: AcademyType[], location: string, setLocation:
     isPanto: true,
   })
 
-  const toggleContainer = (name: string, address: string) => {
+  const toggleContainer = (id: number, name: string, address: string, tag: string[]) => {
     setAcademyName(name);
     setAcademyAddress(address);
+    setAcademyId(id);
+    setAcademyTags(tag)
   };
 
   return (
@@ -50,6 +54,8 @@ const Map = (props: { academyList: AcademyType[], location: string, setLocation:
         <Detail
           name={academyName}
           address={academyAddress}
+          id={academyId}
+          tag={academyTags}
           setShowDetail={setShowDetail}
         />
       )}

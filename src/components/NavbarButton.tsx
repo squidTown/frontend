@@ -14,6 +14,7 @@ interface NavbarButtonProps {
 const cx = classNames.bind(styles);
 
 const NavbarButton = ({ icon, text, isActive, onClick }: NavbarButtonProps) => {
+  
   return (
     <div
       className={cx([`${styles.btnWrapper} ${isActive ? styles.active : ''}`].join(' '))}
