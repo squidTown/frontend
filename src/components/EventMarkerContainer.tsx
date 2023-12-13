@@ -7,6 +7,8 @@ const EventMarkerContainer = (props: {
   positionLat: number;
   positionLng: number;
   content: string;
+  id: number;
+  tags: string[];
   setShowDetail: React.Dispatch<React.SetStateAction<boolean>>;
   toggleContainer: any;
   list: AcademyType[];
@@ -32,7 +34,7 @@ const EventMarkerContainer = (props: {
         console.log(marker.getPosition());
         map.panTo(marker.getPosition());
         props.setShowDetail(true);
-        props.toggleContainer(props.content, academyAddress);
+        props.toggleContainer(props.content, academyAddress, props.id, props.tags);
       }}
       onMouseOver={() => setIsVisible(true)}
       onMouseOut={() => setIsVisible(false)}

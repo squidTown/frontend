@@ -10,6 +10,7 @@ import { Register } from './pages/Register'
 import UserInfoAlter from './pages/UserInfoAlter'
 import { EmailCheck } from './pages/EmailCheck'
 import Academy from './pages/Academy'
+import Detail from './pages/Detail'
 
 export interface UserInfo {
   userId: number;
@@ -29,6 +30,7 @@ export type AcademyType = {
   lng: number;
   name: string;
   location: string;
+  tag: string[];
 };
 
 const App = () => {
@@ -47,6 +49,7 @@ const App = () => {
         <Route path='/alteruser/:id' element={<UserInfoAlter />} />
         <Route path='/emailCheck/:email' element={<EmailCheck setCitation={setCitation} />} />
         <Route path='/academy' element={<Academy />} />
+        <Route path='/academy/:id' element={<Detail />} />
       </Routes>
     </div>
   )

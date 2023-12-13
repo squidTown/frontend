@@ -1,23 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import containers from "../styles/pages/Container.module.css";
 import styles from '../styles/components/AcademyList.module.css'
 import location from "../assets/json/location.json";
 import AcademyItem from "./AcademyItem";
+import { useNavigate } from "react-router-dom";
 
 const AcademyList = () => {
+  const navigate = useNavigate();
   const [showDetail, setShowDetail] = useState(false);
-  const [academyName, setAcademyName] = useState<string>("name");
-  const [academyAddress, setAcademyAddress] = useState<string>("address");
 
-  useEffect(() => {
-    if (showDetail) {
-      console.log(academyName, academyAddress);
-    }
-  }, [showDetail, academyName, academyAddress]);
-
-  const toggleContainer = (name: string, address: string) => {
-    setAcademyName(name);
-    setAcademyAddress(address);
+  const toggleContainer = (id: number) => {
+    navigate(`/academy/${id}`);
   };
 
   return (

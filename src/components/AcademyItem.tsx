@@ -1,6 +1,7 @@
 import React from "react";
 import { AcademyType } from "../App";
 import styles from "../styles/components/AcademyItem.module.css";
+import TagItem from "./TagItem";
 
 const AcademyItem = (props: {
   list: AcademyType;
@@ -13,7 +14,7 @@ const AcademyItem = (props: {
       className={styles.container}
       onClick={() => {
         props.setShowDetail(true);
-        props.toggleContainer(props.list.name, props.list.location);
+        props.toggleContainer(props.list.id, props.list.name, props.list.location, props.list.tag);
         if (props.setNowState)
           props.setNowState({
             center: { lat: props.list.lat, lng: props.list.lng },
@@ -26,7 +27,9 @@ const AcademyItem = (props: {
           <span className={styles.title}>{props.list.name}</span>
           <span className={styles.address}>{props.list.location}</span>
         </div>
-        <div className={styles.tag}></div>
+        <div className={styles.tag}>{props.list.tag.map((tag) => (
+          <TagItem tag={tag} />
+        ))}</div>
       </div>
     </div>
   );
