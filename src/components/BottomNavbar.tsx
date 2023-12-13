@@ -5,9 +5,10 @@ import NavbarButton from "./NavbarButton";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const BottomNavbar = () => {
-  const [activePage, setActivePage] = useState("");
+  const [activePage, setActivePage] = useState("home");
   const navigate = useNavigate();
   const location = useLocation();
+  const userId = "ABCD";
 
   useEffect(() => {
     const path = location.pathname;
@@ -16,7 +17,7 @@ const BottomNavbar = () => {
       setActivePage("home");
     } else if (path === "/message") {
       setActivePage("message");
-    } else if (path === "/mypage") {
+    } else if (path === `/mypage/${userId}`) {
       setActivePage("mypage");
     }
   }, [location.pathname]);
@@ -52,7 +53,7 @@ const BottomNavbar = () => {
           isActive={activePage === "mypage"}
           onClick={() => {
             setActivePage("mypage");
-            navigatePage("mypage");
+            navigatePage(`mypage/${userId}`);
           }}
         />
       </div>

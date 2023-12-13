@@ -27,7 +27,7 @@ const MyPageContainer = (props: { id: any }) => {
       })
       .then((res) => {
         if (res.data.success) {
-
+          
         }
       })
       .catch((err) => {});
@@ -47,7 +47,7 @@ const MyPageContainer = (props: { id: any }) => {
         }
       })
       .catch((err) => {
-        // window.location.href = "/login";
+        //window.location.href = "/login";
       });
   }, []);
 

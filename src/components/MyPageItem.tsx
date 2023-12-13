@@ -3,7 +3,6 @@ import styles from '../styles/components/MyPageItem.module.css'
 import { getIconById } from '../util'
 
 const MyPageItem = (props: {txt: string, idx: number}) => {
-  console.log(props.idx);
   return (
     <div className={styles.container}>
       <div className={styles.icon}>
