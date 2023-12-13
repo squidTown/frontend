@@ -1,10 +1,12 @@
 import React from 'react'
+import classNames from "classnames/bind";
 import styles from '../styles/components/Main.module.css'
 
-const SliderItem = (props: { data: string }) => {
+const cx = classNames.bind(styles);
+
+const SliderItem = (props: { color: string; }) => {
   return (
-    <div className={styles.content}>
-      {props.data}
+    <div className={cx([`${props.color}`].join(" "),  [`content`].join(" "))}>
     </div>
   )
 }

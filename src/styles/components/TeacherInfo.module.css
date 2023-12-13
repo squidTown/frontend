@@ -1,0 +1,92 @@
+.info {
+  width: 100%;
+  position: relative;
+  display: flex;
+  top: 7vh;
+  flex-direction: column;
+  gap: 30px;
+  padding-bottom: 30px;
+}
+
+.container {
+  display: flex;
+  position: relative;
+  margin-top: 4%;
+  gap: 20px;
+  padding-left: 40px;
+  align-items: center;
+}
+
+.profile {
+  border-radius: 50%;
+  position: relative;
+  height: 100px;
+  width: 100px;
+  background-size: cover;
+  background-image: url("../../assets/img/test5.png");
+}
+
+.mainInfo {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.teachName {
+  display: flex;
+  color: #494d56;
+  gap: 10px;
+}
+
+.teachName > div {
+  font-weight: bold;
+  font-size: 27px;
+  line-height: 27px;
+}
+
+.teachName > span {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 24px;
+  letter-spacing: -0.25px;
+  position: relative;
+  top: 8px;
+}
+
+.location {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0 4px;
+  align-items: center;
+}
+
+.infoColor {
+  color: #494d56;
+  letter-spacing: -0.25px;
+  font-size: 14px;
+}
+
+.loIcon {
+  margin-bottom: 2px;
+}
+
+.introContainer {
+  padding: 0 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.intro {
+  font-size: 15px;
+  line-height: 150%;
+  text-align: left;
+  letter-spacing: -0.2px;
+  color: #494d56;
+  background: #fbfbfb;
+  border: 1px solid #eee;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 30px 15px;
+  white-space: pre-line;
+  word-break: keep-all;
+}

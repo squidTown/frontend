@@ -36,7 +36,6 @@
   min-height: 230px;
   height: 100%;
   border-radius: 16px;
-  background-color: #ccc;
 }
 
 .color1 {
@@ -61,33 +60,73 @@
   align-items: center;
 }
 
-.banner1 {
+.banner {
   position: relative;
-  height: 250px;
-  max-width: 420px;
   width: 100%;
+  height: 250px;
   display: flex;
   padding: 15px 10px;
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(20, 20, 20, 0.1);
-  gap: 5px;
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-color: #eee;
-  background-size: auto;
 }
 
-.banner2 {
+.shortBanner {
   max-width: 320px;
+}
+
+.longBanner {
+  max-width: 420px;
+}
+
+.bannerColor1 {
+  background: linear-gradient(to right, #6d79f8 0%, #83a2ff 100%);
+}
+
+.bannerColor2 {
+  background: linear-gradient(to right, #8b96ff 0%, #b4bdff 100%);
+}
+
+.bannerColor3 {
+  background: linear-gradient(to right, #ffb84e 0%, #ffd28f 100%);;
+}
+
+.bannerColor4 {
+  background: linear-gradient(to right, #fdcd89 0%, #ffe3bb 100%);
+}
+
+.academy {
   width: 100%;
-  padding: 15px 10px;
-  border-radius: 10px;
-  cursor: pointer;
-  box-shadow: 0 2px 8px rgba(20, 20, 20, 0.1);
-  height: 250px;
+  height: 100%;
+  background-image: url("../../assets/img/test1.png");
+  background-position: right bottom;
+  background-size: 70%;
   background-repeat: no-repeat;
-  background-position: 100% bottom;
-  background-color: #eee;
-  background-size: auto;
+}
+
+.work {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/img/test2.png");
+  background-position: right bottom;
+  background-size: 60%;
+  background-repeat: no-repeat;
+}
+
+.teacher {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/img/test3.png");
+  background-position: right bottom;
+  background-size: 80%;
+  background-repeat: no-repeat;
+}
+
+.map {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/img/test4.png");
+  background-position: right bottom;
+  background-size: 70%;
+  background-repeat: no-repeat;
 }
