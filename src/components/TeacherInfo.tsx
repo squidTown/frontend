@@ -36,8 +36,6 @@ const TeacherInfo = () => {
               엔터
               엔터
               엔터
-              엔터
-              dpspdpspdpdjdjdj
             </div>
           </div>
         </div>
