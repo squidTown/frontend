@@ -108,7 +108,8 @@ hr {
   border-radius: 20px;
   background-color: white;
   display: flex;
-  justify-content: right;
+  flex-direction: column;
+  justify-content: end;
   align-items: end;
   box-shadow: 0px 1px 6px 1px #c0c2c7;
   position: relative;
@@ -116,9 +117,14 @@ hr {
 }
 
 .label>span {
-  margin: 3% 5%;
+  margin: 0 6% 5% 5%;
   font-size: 19px;
   font-weight: bold;
+  z-index: 100;
+}
+
+.label>#name {
+  font-size: 26px;
 }
 
 .a1 {

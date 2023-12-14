@@ -87,7 +87,8 @@ const AcademyDetail = (props: { param?: string }) => {
               <h3>가격</h3>
               <div className={styles.price}>
                 <div className={styles.label}>
-                  <span>{price}원/월</span>
+                  <span id={styles.name}>{academy.name}</span>
+                  <span id={styles.pric}>{price}원/월</span>
                   <div className={styles.a1} />
                   <div className={styles.a2} />
                 </div>
