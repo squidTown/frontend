@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import containers from "../styles/pages/Container.module.css";
 import styles from "../styles/components/AcademyDetail.module.css";
 import { useNavigate } from "react-router-dom";
@@ -7,9 +7,16 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 
 const AcademyDetail = (props: { param?: string }) => {
   const navigate = useNavigate();
+  const [userCareer, setUserCareer] = useState<string[]>([]);
   const goPrev = () => {
     navigate(-1);
   };
+
+  useEffect(() => {
+    let careers = ["박사 취득", "16년차"]
+    let arr = [...careers];
+    setUserCareer(arr);
+  }, [])
 
   return (
     <div className={containers.container}>
@@ -35,7 +42,11 @@ const AcademyDetail = (props: { param?: string }) => {
               <hr />
               <div className={styles.description}>이것은 설명이다 !</div>
               <hr />
-              <div className={styles.career}>이것은 나의 경력이다 !</div>
+              <div className={styles.career}>
+                {userCareer.map((value: string) => (
+                  <li>{value}</li>
+                ))}
+              </div>
               <hr />
               <div className={styles.price}>이것은 나의 가격이다 !</div>
             </div>
