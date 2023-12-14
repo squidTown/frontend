@@ -1,7 +1,6 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
 import Header from "../components/Header";
-import BottomNavbar from "../components/BottomNavbar";
 import TeacherInfo from '../components/TeacherInfo';
 
 const TeachInfo = () => {
@@ -11,7 +10,6 @@ const TeachInfo = () => {
     <div>
       <Header location="과외선생님 정보" showPrevButton={true} />
       <TeacherInfo id={id}/>
-      <BottomNavbar />
     </div>
   );
 }

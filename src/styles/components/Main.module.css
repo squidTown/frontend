@@ -62,13 +62,13 @@
   padding: 15px 15px;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(20, 20, 20, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all .3s ease;
 }
 
 .banner:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 10px rgba(20, 20, 20, 0.15);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .shortBanner {
