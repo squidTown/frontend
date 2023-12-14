@@ -8,7 +8,7 @@ const BottomNavbar = () => {
   const [activePage, setActivePage] = useState("home");
   const navigate = useNavigate();
   const location = useLocation();
-  const userId = "ABCD";
+  const userId = "1";
 
   useEffect(() => {
     const path = location.pathname;
