@@ -2,21 +2,38 @@ import React, { useEffect, useState } from "react";
 import containers from "../styles/pages/Container.module.css";
 import styles from "../styles/components/AcademyDetail.module.css";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faEnvelope,
+  faLocationDot,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
+import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+
+interface UserContact {
+  tel: string;
+  mail: string;
+  instagram: string;
+}
 
 const AcademyDetail = (props: { param?: string }) => {
   const navigate = useNavigate();
   const [userCareer, setUserCareer] = useState<string[]>([]);
+  const [price, setPrice] = useState<string>("100,000");
+  const [contact, setContact] = useState<UserContact>({
+    tel: "010-4134-1275",
+    mail: "mail@gamil.com",
+    instagram: "kang._.m_w",
+  });
   const goPrev = () => {
     navigate(-1);
   };
 
   useEffect(() => {
-    let careers = ["박사 취득", "16년차"]
+    let careers = ["박사 취득", "16년차"];
     let arr = [...careers];
     setUserCareer(arr);
-  }, [])
+  }, []);
 
   return (
     <div className={containers.container}>
@@ -42,13 +59,44 @@ const AcademyDetail = (props: { param?: string }) => {
               <hr />
               <div className={styles.description}>이것은 설명이다 !</div>
               <hr />
+              <h3>경력</h3>
               <div className={styles.career}>
                 {userCareer.map((value: string) => (
                   <li>{value}</li>
                 ))}
               </div>
               <hr />
-              <div className={styles.price}>이것은 나의 가격이다 !</div>
+              <h3>가격</h3>
+              <div className={styles.price}>
+                <div className={styles.label}>
+                  <span>{price}원/월</span>
+                  <div className={styles.a1} />
+                  <div className={styles.a2} />
+                </div>
+              </div>
+              <hr />
+              <h3>연락처</h3>
+              <ul className={styles.contact}>
+                <li>
+                  <FontAwesomeIcon icon={faPhone} />
+                  &emsp;
+                  <a href={`tel:${contact.tel}`}>
+                    {contact.tel}
+                  </a>
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faEnvelope} />
+                  &emsp;
+                  <a href={`mailto:${contact.mail}`}>{contact.mail}</a>
+                </li>
+                <li>
+                  <FontAwesomeIcon icon={faInstagram} />
+                  &emsp;
+                  <a href={`https://www.instagram.com/${contact.instagram}/`}>
+                    {contact.instagram}
+                  </a>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
