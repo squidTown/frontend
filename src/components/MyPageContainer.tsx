@@ -47,7 +47,7 @@ const MyPageContainer = (props: { id: any }) => {
         }
       })
       .catch((err) => {
-        //window.location.href = "/login";
+        navigate('/login')
       });
   }, []);
 
