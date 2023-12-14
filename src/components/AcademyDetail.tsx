@@ -108,7 +108,7 @@ const AcademyDetail = (props: { param?: string }) => {
                 <li>
                   <FontAwesomeIcon icon={faInstagram} />
                   &emsp;
-                  <a href={`https://www.instagram.com/${contact.instagram}/`}>
+                  <a href={`https://www.instagram.com/${contact.instagram}/`} target="blank">
                     {contact.instagram}
                   </a>
                 </li>
