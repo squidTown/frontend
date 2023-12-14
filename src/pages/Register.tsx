@@ -139,7 +139,7 @@ export const Register = (props: {citation: string}) => {
 
   const compltBtn = () => {
     if (!emailRegex.test(email)) {
-      alert("이메일 입력이 유효하지않습니다");
+      alert("이메일 입력이 유효하지 않습니다.");
     } else {
       submit();
     }

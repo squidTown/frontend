@@ -14,6 +14,8 @@ const PriceList = (props: { classTitle: string; }) => {
           <div>/ 시간당 20,000원</div>
         </div>
       </div>
+      <div className={styles.a1} />
+      <div className={styles.a2} />
     </div>
   );
 }

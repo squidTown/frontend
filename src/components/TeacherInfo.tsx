@@ -1,9 +1,11 @@
 import React from 'react'
 import containers from '../styles/pages/Container.module.css';
 import styles from '../styles/components/TeacherInfo.module.css'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { Link } from 'react-router-dom';
 import PriceList from './PriceList';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 const TeacherInfo = (props: { id: any }) => {
   return (
@@ -54,7 +56,7 @@ const TeacherInfo = (props: { id: any }) => {
 
           <div className={styles.infoInner}>
             <div className={styles.infoTitle}>경력사항</div>
-            <div className={styles.carrer}>
+            <div className={styles.content}>
               <div>코큰대학 안마학과 석사</div>
               <div>코지마 안마의자 자격증</div>
             </div>
@@ -64,9 +66,15 @@ const TeacherInfo = (props: { id: any }) => {
 
           <div className={styles.infoInner}>
             <div className={styles.infoTitle}>경력사항</div>
-            <div className={styles.carrer}>
-              <div>코큰대학 안마학과 석사</div>
-              <div>코지마 안마의자 자격증</div>
+            <div className={styles.content}>
+              <div>
+                <FontAwesomeIcon icon={faInstagram} className={styles.snsIcon} />
+                <Link to="https://www.instagram.com/hyeonjun1782/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" className={styles.snsText}>@hyeonjun1782</Link>
+              </div>
+              <div>
+                <FontAwesomeIcon icon={faPhone} className={styles.snsIcon} />
+                <Link to="" className={styles.snsText}>010-1234-1234</Link>
+              </div>
             </div>
           </div>
 
