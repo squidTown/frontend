@@ -9,7 +9,7 @@ const TeachInfo = () => {
 
   return (
     <div>
-      <Header location="과외선생님 정보" />
+      <Header location="과외선생님 정보" showPrevButton={true} />
       <TeacherInfo id={id}/>
       <BottomNavbar />
     </div>

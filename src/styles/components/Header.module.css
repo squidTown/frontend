@@ -12,6 +12,14 @@
   z-index: 30;
 }
 
+.prev {
+  position: absolute;
+  left: 22%;
+  font-size: 22px;
+  color: #494d56;
+  cursor: pointer;
+}
+
 .location {
   font-size: 1.1rem;
   font-weight: 800;

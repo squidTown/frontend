@@ -17,15 +17,15 @@ const TeacherInfo = (props: { id: any }) => {
                 <div>전삥우</div>
                 <span>선생님</span>
               </div>
+
               <div className={styles.location}>
                 <span>
-                  <FontAwesomeIcon icon={faLocationDot} className={`${styles.infoColor} ${styles.loIcon}`}/>
+                  <FontAwesomeIcon icon={faLocationDot} className={styles.loIcon}/>
                 </span>
-                <span className={styles.infoColor}>
-                  김해시 동상동
-                </span>
+                <span className={styles.loText}>경상남도 김해시 내외동</span>
               </div>
-              <div className={styles.infoColor}>
+
+              <div className={styles.actRange}>
                 활동범위 : 동상동, 회현동, 부원동, 내외동, 북부동
               </div>
             </div>
@@ -33,11 +33,13 @@ const TeacherInfo = (props: { id: any }) => {
 
           <div className={styles.introContainer}>
             <div className={styles.intro}>
-              엔터
-              엔터
-              엔터
+            안녕하세요, 전삥우 선생님입니다. 
+            앞으로 잘 부탁드려요.
             </div>
           </div>
+
+          <hr className={styles.contour}>
+          </hr>
         </div>
       </div>
     </div>
