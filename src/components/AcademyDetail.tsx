@@ -9,6 +9,7 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
+import TagItem from "./TagItem";
 
 interface UserContact {
   tel: string;
@@ -36,10 +37,7 @@ const AcademyDetail = (props: { param?: string }) => {
     name: "학원이름",
     location: "학원위치",
     description: "이것은 설명이다!",
-    tags: [
-      "수학",
-      "영어"
-    ]
+    tags: ["수학", "영어"],
   });
   const goPrev = () => {
     navigate(-1);
@@ -69,9 +67,11 @@ const AcademyDetail = (props: { param?: string }) => {
                 <FontAwesomeIcon icon={faLocationDot} />
                 &emsp;{academy.location}
               </span>
-              <span className={styles.tag}>{academy.tags.map((value) => (
-                {value}
-              ))}</span>
+              <span className={styles.tag}>
+                {academy.tags.map((value) => (
+                  <TagItem tag={value} />
+                ))}
+              </span>
             </div>
             <div className={styles.main}>
               <hr />
@@ -98,9 +98,7 @@ const AcademyDetail = (props: { param?: string }) => {
                 <li>
                   <FontAwesomeIcon icon={faPhone} />
                   &emsp;
-                  <a href={`tel:${contact.tel}`}>
-                    {contact.tel}
-                  </a>
+                  <a href={`tel:${contact.tel}`}>{contact.tel}</a>
                 </li>
                 <li>
                   <FontAwesomeIcon icon={faEnvelope} />
