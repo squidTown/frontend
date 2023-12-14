@@ -14,7 +14,7 @@ const TeacherInfo = (props: { id: any }) => {
 
             <div className={styles.mainInfo}>
               <div className={styles.teachName}>
-                <div>전삥우</div>
+                <div>임현준</div>
                 <span>선생님</span>
               </div>
 
@@ -33,13 +33,14 @@ const TeacherInfo = (props: { id: any }) => {
 
           <div className={styles.introContainer}>
             <div className={styles.intro}>
-            안녕하세요, 전삥우 선생님입니다. 
+            낭만 코선생입니다. 
             앞으로 잘 부탁드려요.
             </div>
           </div>
 
-          <hr className={styles.contour}>
-          </hr>
+          <hr className={styles.contour} />
+          
+
         </div>
       </div>
     </div>

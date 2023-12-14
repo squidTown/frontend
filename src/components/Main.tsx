@@ -76,12 +76,32 @@ const Main = () => {
           </div>
           <div className={styles.col}>
             <div className={styles.row}>
-              <Banner bannerWidth={"longBanner"} bannerColor={"bannerColor1"} path={"academy"} />
-              <Banner bannerWidth={"shortBanner"} bannerColor={"bannerColor2"} path={"work"} />
+              <Banner 
+                bannerWidth={"longBanner"} 
+                bannerTitle={"내 주변 학원"} 
+                bannerColor={"bannerColor1"} 
+                path={"academy"} 
+              />
+              <Banner 
+                bannerWidth={"shortBanner"}
+                bannerTitle={"학원 구인구직"} 
+                bannerColor={"bannerColor2"} 
+                path={"work"} 
+              />
             </div>
             <div className={styles.row}>
-              <Banner bannerWidth={"shortBanner"} bannerColor={"bannerColor3"} path={"teacher"} />
-              <Banner bannerWidth={"longBanner"} bannerColor={"bannerColor4"} path={"map"} />
+              <Banner 
+                bannerWidth={"shortBanner"}
+                bannerTitle={"내 주변 과외선생님"} 
+                bannerColor={"bannerColor3"} 
+                path={"teacher"} 
+              />
+              <Banner 
+                bannerWidth={"longBanner"} 
+                bannerTitle={"지도에서 찾기"} 
+                bannerColor={"bannerColor4"} 
+                path={"map"} 
+              />
             </div>
           </div>
         </div>
