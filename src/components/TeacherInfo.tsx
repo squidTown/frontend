@@ -3,6 +3,7 @@ import containers from '../styles/pages/Container.module.css';
 import styles from '../styles/components/TeacherInfo.module.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import PriceList from './PriceList';
 
 const TeacherInfo = (props: { id: any }) => {
   return (
@@ -34,13 +35,32 @@ const TeacherInfo = (props: { id: any }) => {
           <div className={styles.introContainer}>
             <div className={styles.intro}>
             낭만 코선생입니다. 
-            앞으로 잘 부탁드려요.
+            코선생 소개글 ~~
             </div>
           </div>
 
           <hr className={styles.contour} />
           
+          <div className={styles.priceLists}>
+            <div className={styles.infoInner}>
+              <div className={styles.infoTitle}>수업 가격</div>
+              <PriceList classTitle="수학과외" />
+              <PriceList classTitle="영어과외" />
+              <PriceList classTitle="국어과외" />
+            </div>
+          </div>
 
+          <hr className={styles.contour} />
+
+          <div className={styles.infoInner}>
+            <div className={styles.infoTitle}>경력사항</div>
+            <div className={styles.carrer}>
+              <div>코큰대학 안마학과 석사</div>
+              <div>코지마 안마의자 자격증</div>
+            </div>
+          </div>
+
+          <hr className={styles.contour} />
         </div>
       </div>
     </div>

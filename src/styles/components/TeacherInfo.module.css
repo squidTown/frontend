@@ -14,7 +14,7 @@
   position: relative;
   margin-top: 4%;
   gap: 20px;
-  padding-left: 40px;
+  padding-left: 60px;
   align-items: center;
 }
 
@@ -72,7 +72,7 @@
 }
 
 .introContainer {
-  padding: 0 40px;
+  padding: 0 60px;
   width: 100%;
   box-sizing: border-box;
 }
@@ -98,4 +98,82 @@
   border-right: none;
   border-top: 1px solid #ebedf2;
   margin: 0px;
+}
+
+.priceLists {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.infoInner {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 60px;
+  box-sizing: border-box;
+  gap: 20px;
+  position: relative;
+}
+
+.infoTitle {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  color: #5467f5;
+}
+
+.pList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  gap: 40px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  transition: all .3s ease;
+}
+
+.pList:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(20, 20, 20, 0.15);
+}
+
+.lInfo {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  color: #808080;
+  padding: 20px 30px;
+  width: 160px;
+}
+
+.lDetailInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.diText {
+  display: flex;
+  padding-left: 30px;
+  padding-bottom: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.2px;
+  color: #494d56;
+}
+
+.carrer {
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 400;
+  text-align: left;
+  letter-spacing: -0.2px;
+  color: #494d56;
+  white-space: pre-line;
+  word-break: keep-all;
 }

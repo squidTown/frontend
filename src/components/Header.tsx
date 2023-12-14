@@ -13,8 +13,10 @@ const Header = (props: {location: string, showPrevButton?: boolean}) => {
   return (
     <div className={styles.container}>
       {props.showPrevButton && (
-        <div className={styles.prev} onClick={goPrev}>
-          <FontAwesomeIcon icon={faArrowLeft} />
+        <div className={styles.pageWidth}>
+          <div className={styles.prev} onClick={goPrev}>
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </div>
         </div>
       )}
       <span className={styles.location}>{props.location}</span>

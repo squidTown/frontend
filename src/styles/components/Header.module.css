@@ -12,9 +12,17 @@
   z-index: 30;
 }
 
+.pageWidth {
+  position: absolute;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+}
+
 .prev {
   position: absolute;
-  left: 22%;
+  left: 4%;
   font-size: 22px;
   color: #494d56;
   cursor: pointer;

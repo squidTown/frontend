@@ -34,7 +34,7 @@ b {
   width: 100%;
   height: 10%;
   margin-top: 10%;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .UserTextBig {
@@ -51,8 +51,22 @@ b {
 }
 
 .inputBox {
+  max-height: 380px;
   width: 100%;
   height: 65%;
+  padding-right: 12px;
+  overflow-y: scroll;
+}
+
+.inputBox::-webkit-scrollbar {
+  margin-left: 2px;
+  width: 6px;
+}
+
+.inputBox::-webkit-scrollbar-thumb {
+  outline: none;
+  border-radius: 10px;
+  background-color: #ccc;
 }
 
 .idWrapperBox {
@@ -83,6 +97,11 @@ b {
   border-radius: 3px;
   font-size: 13px;
   cursor: pointer;
+  transition: all ease-in-out .15s;
+}
+
+.idBtn:hover, .joinBtn:hover {
+  background-color: #4b5eea;
 }
 
 .idText {
@@ -119,7 +138,7 @@ b {
 }
 
 .pwdInput {
-  width: 70%;
+  width: 80%;
   height: 100%;
   border: none;
   outline: none;
@@ -148,16 +167,15 @@ b {
 }
 
 .gender {
-  width: 120px;
-  height: 50px;
+  width: 25%;
   border: 1px solid #ddd;
   border-radius: 3px;
   display: flex;
 }
 
 .male {
-  width: 60px;
-  height: 50px;
+  width: 50%;
+  height: 100%;
   border-radius: 3px 0 0 3px;
   border-right: 1px solid #ddd;
   display: flex;
@@ -169,8 +187,8 @@ b {
 }
 
 .female {
-  width: 60px;
-  height: 50px;
+  width: 50%;
+  height: 100%;
   border-radius: 0 3px 3px 0;
   display: flex;
   justify-content: center;
@@ -228,24 +246,22 @@ b {
   margin-left: 3%;
 }
 
-.wrapper::-webkit-scrollbar {
-  width: 7px;
+.totalWrapper:last-child {
+  margin-top: 20px;
 }
 
-.wrapper::-webkit-scrollbar-thumb {
-  max-height: 100px;
-  /* 스크롤바의 길이 */
-  background: #848484;
-  /* 스크롤바의 색상 */
-  border-radius: 10px;
+.terms {
+  display: flex;
+  justify-content: right;
 }
 
-.wrapper::-webkit-scrollbar-track {
-  background: #a5a5a547;
-  /*스크롤바 뒷 배경 색상*/
+.termsText {
+  font-size: 12px;
+  margin-right: 6px;
 }
 
 .bottomWrapper {
+  margin-top: 35px;
   width: 100%;
   height: 10%;
   display: flex;
@@ -254,20 +270,22 @@ b {
 }
 
 .bottomBox {
-  width: 50%; 
+  width: 50%;
   height: 100%;
 }
 
 .joinBtn {
   background-color: #5467f5;
+  margin: auto 0;
   width: 100%;
-  height: 90%;
+  height: 100%;
   color: white;
-  border-radius: 3px;
-  font-size: 15px;
+  border-radius: 16px;
+  font-size: 18px;
   cursor: pointer;
   outline: none;
   border: none;
+  transition: all ease-in-out .15s;
 }
 
 @media screen and (max-width: 980px) {
