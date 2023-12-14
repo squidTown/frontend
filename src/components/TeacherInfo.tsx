@@ -61,6 +61,16 @@ const TeacherInfo = (props: { id: any }) => {
           </div>
 
           <hr className={styles.contour} />
+
+          <div className={styles.infoInner}>
+            <div className={styles.infoTitle}>경력사항</div>
+            <div className={styles.carrer}>
+              <div>코큰대학 안마학과 석사</div>
+              <div>코지마 안마의자 자격증</div>
+            </div>
+          </div>
+
+          <hr className={styles.contour} />
         </div>
       </div>
     </div>

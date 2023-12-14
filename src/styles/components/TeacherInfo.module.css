@@ -43,6 +43,7 @@
   font-weight: bold;
   font-size: 27px;
   line-height: 27px;
+  color: #5467f5;
 }
 
 .teachName > span {
@@ -83,8 +84,8 @@
   text-align: left;
   letter-spacing: -0.2px;
   color: #494d56;
-  background: #fbfbfb;
-  border: 1px solid #eee;
+  background: #f8f8f8;
+  border: 1px solid #ddd;
   box-sizing: border-box;
   border-radius: 10px;
   padding: 30px 15px;
@@ -120,7 +121,7 @@
   font-weight: bold;
   font-size: 20px;
   line-height: 26px;
-  color: #5467f5;
+  color: #494d56;
 }
 
 .pList {
