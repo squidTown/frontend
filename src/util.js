@@ -1,5 +1,11 @@
 import { faBullhorn, faHeadset, faNewspaper, faPenToSquare, faBan, faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import banner1 from './assets/img/slider-item1.png';
+import banner2 from './assets/img/slider-item1.png';
+import banner3 from './assets/img/slider-item1.png';
+import banner4 from './assets/img/slider-item1.png';
+import banner5 from './assets/img/slider-item1.png';
+import banner6 from './assets/img/slider-item1.png';
 
 export const getIconById = (targetId) => {
   const targetIconId = String(targetId);
@@ -17,6 +23,26 @@ export const getIconById = (targetId) => {
     case "5":
       return <FontAwesomeIcon icon={faNewspaper} />
     default: 
+      return null;
+  }
+}
+
+export const getBannerImgById = (targetId) => {
+  const targetImgId = String(targetId);
+  switch (targetImgId) {
+    case "1":
+      return banner1;
+    case "2":
+      return banner2;
+    case "3":
+      return banner3;
+    case "4":
+      return banner4;
+    case "5":
+      return banner5;
+    case "6":
+      return banner6;
+    default:
       return null;
   }
 }

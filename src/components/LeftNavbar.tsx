@@ -12,9 +12,8 @@ const LeftNavbar = (props: {
   return (
     <div className={styles.leftnav}>
       {props.list.map((value) => (
-        <div className={styles.item}>
+        <div key={`map-${value.id}-${value.name}`} className={styles.item}>
           <AcademyItem
-            key={`map-${value.id}`}
             list={value}
             setShowDetail={props.setShowDetail}
             toggleContainer={props.toggleContainer}

@@ -19,6 +19,7 @@ const AcademyList = () => {
         <div className={styles.container}>
           {location.positions.map((element) => (
             <AcademyItem
+              key={`${element.id}item`}
               list={element}
               setShowDetail={setShowDetail}
               toggleContainer={toggleContainer}
