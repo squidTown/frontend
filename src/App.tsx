@@ -12,6 +12,8 @@ import { EmailCheck } from './pages/EmailCheck'
 import TeachInfo from './pages/TeachInfo'
 import Academy from './pages/Academy'
 import Detail from './pages/Detail'
+import TeachList from './pages/TeachList'
+import MessagePage from './pages/MessagePage'
 
 export interface UserInfo {
   userId: number;
@@ -44,12 +46,14 @@ const App = () => {
       <Routes>
         <Route path='/' element={<MainPage location={locations} />} />
         <Route path='/map' element={<Map academyList={academyList} location={locations} setLocation={setLocations} />} />
+        <Route path='/message' element={<MessagePage />} />
         <Route path='/mypage/:id' element={<MyPage />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register citation={citation} />} />
         <Route path='/alteruser/:id' element={<UserInfoAlter />} />
         <Route path='/emailCheck/:email' element={<EmailCheck setCitation={setCitation} />} />
-        <Route path='/teachInfo' element={<TeachInfo />} />
+        <Route path='/teacher' element={<TeachList />} />
+        <Route path='/teacher/:id' element={<TeachInfo />} />
         <Route path='/academy' element={<Academy />} />
         <Route path='/academy/:id' element={<Detail />} />
       </Routes>

@@ -63,70 +63,88 @@
 .banner {
   position: relative;
   width: 100%;
-  height: 250px;
-  display: flex;
-  padding: 15px 10px;
+  height: 240px;
+  padding: 15px 15px;
   border-radius: 10px;
   cursor: pointer;
   box-shadow: 0 2px 8px rgba(20, 20, 20, 0.1);
+  transition: all .3s ease;
+}
+
+.banner:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(20, 20, 20, 0.15);
 }
 
 .shortBanner {
-  max-width: 320px;
+  max-width: 300px;
 }
 
 .longBanner {
   max-width: 420px;
 }
 
+.bannerTitle {
+  font-size: 17px;
+  line-height: 115%;
+  font-weight: 700;
+  text-align: left;
+  letter-spacing: -0.2px;
+  color: #3d4149;
+  overflow: hidden;
+  white-space: pre-line;
+  text-overflow: ellipsis;
+  word-break: keep-all;
+}
+
 .bannerColor1 {
-  background: linear-gradient(to right, #6d79f8 0%, #83a2ff 100%);
+  background: linear-gradient(to top, rgba(179, 212, 255, 0.8), #fff);
 }
 
 .bannerColor2 {
-  background: linear-gradient(to right, #8b96ff 0%, #b4bdff 100%);
+  background: linear-gradient(to top, rgba(209, 234, 255, 0.8), #fff);
 }
 
 .bannerColor3 {
-  background: linear-gradient(to right, #ffb84e 0%, #ffd28f 100%);;
+  background: linear-gradient(to top, rgba(185, 225, 255, 0.8), #fff);
 }
 
 .bannerColor4 {
-  background: linear-gradient(to right, #fdcd89 0%, #ffe3bb 100%);
+  background: linear-gradient(to top, rgba(209, 224, 255, 0.8), #fff);
 }
 
 .academy {
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/img/test1.png");
-  background-position: right bottom;
-  background-size: 70%;
+  background-image: url("../../assets/img/academy.png");
   background-repeat: no-repeat;
+  background-position: 110% 30px;
+  background-size: contain;  
 }
 
 .work {
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/img/test2.png");
-  background-position: right bottom;
-  background-size: 60%;
+  background-image: url("../../assets/img/work.png");
   background-repeat: no-repeat;
+  background-position: 110% 110px;
+  background-size: contain;  
 }
 
 .teacher {
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/img/test3.png");
-  background-position: right bottom;
-  background-size: 80%;
+  background-image: url("../../assets/img/teacher.png");
   background-repeat: no-repeat;
+  background-position: 110% 97px;
+  background-size: contain;  
 }
 
 .map {
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/img/test4.png");
-  background-position: right bottom;
-  background-size: 70%;
+  background-image: url("../../assets/img/map.png");
   background-repeat: no-repeat;
+  background-position: 110% 30px;
+  background-size: contain;  
 }
