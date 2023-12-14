@@ -66,12 +66,12 @@ const Main = () => {
         <div className={styles.inner}>
           <div className={styles.sliderContainer}>
             <Slider {...settings}>
-              <SliderItem color={"color1"} />
-              <SliderItem color={"color2"} />
-              <SliderItem color={"color1"} />
-              <SliderItem color={"color2"} />
-              <SliderItem color={"color1"} />
-              <SliderItem color={"color2"} />
+              <SliderItem id={"1"} />
+              <SliderItem id={"2"} />
+              <SliderItem id={"3"} />
+              <SliderItem id={"4"} />
+              <SliderItem id={"5"} />
+              <SliderItem id={"6"} />
             </Slider>
           </div>
           <div className={styles.col}>

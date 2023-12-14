@@ -28,7 +28,7 @@ const AcademyItem = (props: {
           <span className={styles.address}>{props.list.location}</span>
         </div>
         <div className={styles.tag}>{props.list.tag.map((tag) => (
-          <TagItem tag={tag} />
+          <TagItem key={`tags-${tag}`} tag={tag} />
         ))}</div>
       </div>
     </div>
