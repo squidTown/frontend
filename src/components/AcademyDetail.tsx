@@ -16,6 +16,13 @@ interface UserContact {
   instagram: string;
 }
 
+interface AcademyInfo {
+  name: string;
+  location: string;
+  description: string;
+  tags: string[];
+}
+
 const AcademyDetail = (props: { param?: string }) => {
   const navigate = useNavigate();
   const [userCareer, setUserCareer] = useState<string[]>([]);
@@ -24,6 +31,15 @@ const AcademyDetail = (props: { param?: string }) => {
     tel: "010-4134-1275",
     mail: "mail@gamil.com",
     instagram: "kang._.m_w",
+  });
+  const [academy, setAcademy] = useState<AcademyInfo>({
+    name: "학원이름",
+    location: "학원위치",
+    description: "이것은 설명이다!",
+    tags: [
+      "수학",
+      "영어"
+    ]
   });
   const goPrev = () => {
     navigate(-1);
@@ -48,16 +64,18 @@ const AcademyDetail = (props: { param?: string }) => {
           </div>
           <div className={styles.inner}>
             <div className={styles.header}>
-              <span className={styles.title}>학원이름</span>
+              <span className={styles.title}>{academy.name}</span>
               <span className={styles.location}>
                 <FontAwesomeIcon icon={faLocationDot} />
-                &emsp;학원위치
+                &emsp;{academy.location}
               </span>
-              <span className={styles.tag}>태그들</span>
+              <span className={styles.tag}>{academy.tags.map((value) => (
+                {value}
+              ))}</span>
             </div>
             <div className={styles.main}>
               <hr />
-              <div className={styles.description}>이것은 설명이다 !</div>
+              <div className={styles.description}>{academy.description}</div>
               <hr />
               <h3>경력</h3>
               <div className={styles.career}>
