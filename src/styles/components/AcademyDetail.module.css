@@ -82,8 +82,12 @@
 
 .career {
   width: 96%;
+  background-color: #fbfbfb;
+  border: 1px solid #eee;
+  color: #494d56;
   margin: 10px 0 10px 0;
   padding: 3% 2% 3% 2%;
+  border-radius: 5px;
 }
 
 hr {
