@@ -1,6 +1,45 @@
+.search {
+  width: 100%;
+  height: 10%;
+  margin-top: 7%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  width: 50%;
+  height: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgb(149, 149, 149);
+  border-radius: 20px;
+}
+
+.icon {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.icon > svg {
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+#search {
+  width: 85%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
 .container {
   width: 90%;
-  margin-top: 7%;
   padding-bottom: 7%;
   display: grid;
   gap: 5px;

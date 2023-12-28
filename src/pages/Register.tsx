@@ -10,8 +10,9 @@ import {
   faMars,
   faVenus,
 } from "@fortawesome/free-solid-svg-icons";
+import Email from "../components/Email";
 
-export const Register = (props: {citation: string}) => {
+export const Register = () => {
   const cx = classNames.bind(styles);
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
@@ -20,6 +21,8 @@ export const Register = (props: {citation: string}) => {
   const [gender, setGender] = useState<number>(1);
   const [address, setAddress] = useState("");
   const [birth, setBirth] = useState<string>("");
+  const [checkValue, setCheckValue] = useState<boolean>(false);
+  const [btnTxt, setBtnTxt] = useState<string>("메일인증");
   
   const [viewPwd, setViewPwd] = useState({
     state: "password",
@@ -85,15 +88,6 @@ export const Register = (props: {citation: string}) => {
     setBirth(e.target.value);
   };
 
-  const clickCitation = () => {
-    if (props.citation === '인증번호 발송') {
-      navigate(`/emailCheck/${email}`);
-      sendEmail();
-    } else {
-      alert('이미 인증되었습니다')
-    }
-  };
-
   const submit = () => {
     console.log(birth);
     axios({
@@ -145,8 +139,13 @@ export const Register = (props: {citation: string}) => {
     }
   };
 
+  const checkMail = () => {
+    setCheckValue(true);
+  }
+
   return (
     <div>
+      <Email value={checkValue} setModal={setCheckValue} setBtnTxt={setBtnTxt} />
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.registerBox}>
@@ -171,11 +170,9 @@ export const Register = (props: {citation: string}) => {
                   ></input>
                   <button
                     className={styles.idBtn}
-                    onClick={() => {
-                      clickCitation();
-                    }}
+                    onClick={checkMail}
                   >
-                    {props.citation}
+                    {btnTxt}
                   </button>
                 </div>
               </div>

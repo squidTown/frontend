@@ -4,18 +4,15 @@ import styles from "../styles/components/AcademyDetail.module.css";
 import { useNavigate } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faEnvelope,
+  faBook,
+  faChalkboard,
   faLocationDot,
+  faPencil,
+  faPeopleGroup,
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
-import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 import TagItem from "./TagItem";
-
-interface UserContact {
-  tel: string;
-  mail: string;
-  instagram: string;
-}
+import Button from "./Button";
 
 interface AcademyInfo {
   name: string;
@@ -26,28 +23,40 @@ interface AcademyInfo {
 
 const AcademyDetail = (props: { param?: string }) => {
   const navigate = useNavigate();
-  const [userCareer, setUserCareer] = useState<string[]>([]);
-  const [price, setPrice] = useState<string>("100,000");
-  const [contact, setContact] = useState<UserContact>({
-    tel: "010-4134-1275",
-    mail: "mail@gamil.com",
-    instagram: "kang._.m_w",
-  });
+  const [contact, setContact] = useState<string[]>([
+    "010-4134-1275",
+    "mail@gmail.com",
+    "kang._.m_w",
+  ]);
   const [academy, setAcademy] = useState<AcademyInfo>({
     name: "학원이름",
     location: "학원위치",
-    description: "이것은 설명이다!",
+    description:
+      "이것은 설명이sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssddddddddddddddd다!",
     tags: ["수학", "영어"],
   });
+  const [academyInfo, setacademyInfo] = useState({
+    count: "5 ~ 9",
+    subject: academy.tags,
+    goal: ["입시", "수능", "성적향상"],
+  });
+  const [academyPrice, setAcademyPrice] = useState([
+    {
+      subject: "수학",
+      price: 100000,
+      date: "한 달",
+    },
+    {
+      subject: "영어",
+      price: 150000,
+      date: "일 년",
+    },
+  ]);
   const goPrev = () => {
     navigate(-1);
   };
 
-  useEffect(() => {
-    let careers = ["박사 취득", "16년차"];
-    let arr = [...careers];
-    setUserCareer(arr);
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <div className={containers.container}>
@@ -74,46 +83,88 @@ const AcademyDetail = (props: { param?: string }) => {
               </span>
             </div>
             <div className={styles.main}>
-              <hr />
-              <div className={styles.description}>{academy.description}</div>
-              <hr />
-              <h3>경력</h3>
-              <div className={styles.career}>
-                {userCareer.map((value: string) => (
-                  <li>{value}</li>
-                ))}
-              </div>
-              <hr />
-              <h3>가격</h3>
-              <div className={styles.price}>
-                <div className={styles.label}>
-                  <span id={styles.name}>{academy.name}</span>
-                  <span id={styles.pric}>{price}원/월</span>
-                  <div className={styles.a1} />
-                  <div className={styles.a2} />
+              <h3>학원 요약 정보</h3>
+              <div className={styles.academyinfo}>
+                <div id={styles.subtitle}>
+                  <FontAwesomeIcon icon={faPeopleGroup} />
+                  수강 인원
+                </div>
+                <div id={styles.txt}>{academyInfo.count}명</div>
+                <div id={styles.subtitle}>
+                  <FontAwesomeIcon icon={faBook} />
+                  수강 과목
+                </div>
+                <div id={styles.txt}>
+                  {academyInfo.subject.map((value) => (
+                    <span>{value}</span>
+                  ))}
+                </div>
+                <div id={styles.subtitle}>
+                  <FontAwesomeIcon icon={faPencil} />
+                  수강 목적
+                </div>
+                <div id={styles.txt}>
+                  {academyInfo.goal.map((value) => (
+                    <span>{value}</span>
+                  ))}
                 </div>
               </div>
               <hr />
-              <h3>연락처</h3>
-              <ul className={styles.contact}>
-                <li>
+              <h3>학원 소개</h3>
+              <div className={styles.description}>
+                <div className={styles.option}>
+                  <FontAwesomeIcon icon={faLocationDot} />
+                  주소
+                </div>
+                <div className={styles.detail}>{academy.location}</div>
+                <div className={styles.option}>
                   <FontAwesomeIcon icon={faPhone} />
-                  &emsp;
-                  <a href={`tel:${contact.tel}`}>{contact.tel}</a>
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faEnvelope} />
-                  &emsp;
-                  <a href={`mailto:${contact.mail}`}>{contact.mail}</a>
-                </li>
-                <li>
-                  <FontAwesomeIcon icon={faInstagram} />
-                  &emsp;
-                  <a href={`https://www.instagram.com/${contact.instagram}/`} target="blank">
-                    {contact.instagram}
-                  </a>
-                </li>
-              </ul>
+                  연락처
+                </div>
+                <div className={`${styles.detail} ${styles.contact}`}>
+                  {contact.map((value) => (
+                    <span>{value}</span>
+                  ))}
+                </div>
+                <div className={styles.option}>
+                  <FontAwesomeIcon icon={faChalkboard} />
+                  학원소개
+                </div>
+                <div className={styles.detail}>{academy.description}</div>
+              </div>
+              <hr />
+              <h3>수업정보</h3>
+              <table className={styles.table}>
+                <tr>
+                  <th>과목명</th>
+                  <th>강습비</th>
+                  <th>수강기간</th>
+                </tr>
+                {academyPrice.map((value) => (
+                  <tr className={styles.itemLine}>
+                    <td>{value.subject}</td>
+                    <td>{value.price.toLocaleString()}</td>
+                    <td>{value.date}</td>
+                  </tr>
+                ))}
+              </table>
+              <h3>학원 후기</h3>
+              <div className={styles.review}>
+                <div className={styles.opinion}>
+                ⭐4.7
+                </div>
+                <div className={styles.write}>
+                  <div className={styles.writeWrap}>
+                    <div className={styles.reviewOption}>매우좋음</div>
+                    <div className={styles.reviewOption}>좋음</div>
+                    <div className={styles.reviewOption}>보통</div>
+                    <div className={styles.reviewOption}>별로</div>
+                    <div className={styles.reviewOption}>매우별로</div>
+                  </div>
+                  <Button clickEvent={() => {}} size="middle" txt="리뷰 작성하기" type="full" />
+                </div>
+              </div>
+              <div className={styles.area} />
             </div>
           </div>
         </div>
