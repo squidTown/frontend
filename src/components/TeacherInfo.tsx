@@ -20,7 +20,7 @@ interface TInfo {
   tags: string[];
 }
 
-const TeacherInfo = (props: { id?: any }) => {
+const TeacherInfo = (props: { param?: any }) => {
   const [userCareer, setUserCareer] = useState<string[]>([]);
   const [price, setPrice] = useState<string>("160,000");
   const [contact, setContact] = useState<UserContact>({

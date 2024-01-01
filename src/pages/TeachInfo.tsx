@@ -8,7 +8,7 @@ const TeachInfo = () => {
   return (  
     <div>
       <Header location="과외선생님 정보" showPrevButton={true} />
-      <TeacherInfo id={id}/>
+      <TeacherInfo param={id}/>
     </div>
   );
 }
