@@ -36,6 +36,13 @@ export type AcademyType = {
   tag: string[];
 };
 
+export type TeacherType = {
+  id: number;
+  name: string;
+  actRange: string[];
+  tag: string[];
+};
+
 const App = () => {
   const [locations, setLocations] = useState("경북 의성군 봉양면 화전리");
   const academyList: AcademyType[] = location.positions;

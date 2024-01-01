@@ -1,12 +1,12 @@
 import React from 'react'
 import styles from "../styles/components/TeacherInfo.module.css";
 
-const PriceList = (props: { classTitle: string; }) => {
+const PriceList = (props: { classTitle: string; price: string }) => {
   return (
     <div className={styles.pList}>
       <div className={styles.lInfo}>
         <div>{props.classTitle}</div>
-        <div>주 2회 160,000</div>
+        <div>주 2회 {props.price}</div>
       </div>
       <div className={styles.lDetailInfo}>
         <div className={styles.diText}>

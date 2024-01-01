@@ -6,7 +6,7 @@ import TeacherList from '../components/TeacherList';
 const TeachList = () => {
   return (
     <div>
-      <Header location="선생님 목록" />
+      <Header location="과외선생님 찾아보기" />
       <TeacherList />
       <BottomNavbar />
     </div>

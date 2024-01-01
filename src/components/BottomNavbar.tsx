@@ -5,7 +5,7 @@ import NavbarButton from "./NavbarButton";
 import { useNavigate, useLocation } from "react-router-dom";
 
 const BottomNavbar = () => {
-  const [activePage, setActivePage] = useState("home");
+  const [activePage, setActivePage] = useState("");
   const navigate = useNavigate();
   const location = useLocation();
   const userId = "1";

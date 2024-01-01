@@ -24,7 +24,7 @@
   height: 100px;
   width: 100px;
   background-size: cover;
-  background-image: url("../../assets/img/test5.png");
+  background-image: url("../../assets/img/prfTeacher.png");
 }
 
 .mainInfo {
@@ -54,7 +54,7 @@
   top: 8px;
 }
 
-.location {
+.actRange {
   display: flex;
   gap: 10px;
   margin: 10px 0 4px;
@@ -62,13 +62,17 @@
 }
 
 .loIcon, .loText, .actRange {
-  color: #494d56;
   letter-spacing: -0.25px;
   font-size: 14px;
 }
 
+.loText, .actRange {
+  color: #333;
+}
+
 .loIcon {
   margin-bottom: 2px;
+  color: #494d56;
 }
 
 .introContainer {
@@ -204,13 +208,10 @@
 
 .snsIcon, .snsText {
   font-size: 15px;
+  color: #5467f5;
+  text-decoration: none;
 }
 
 .snsIcon {
   margin-right: 8px;
-  color: #5467f5;
-}
-
-.snsText {
-  color: #333;
 }

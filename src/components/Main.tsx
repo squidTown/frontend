@@ -43,8 +43,8 @@ const Main = () => {
     centerMode: true, // 현재 컨텐츠 가운데 정렬
     centerPadding: '0', // 중앙 컨텐츠 padding 값
     autoplay: true, // 자동 캐러셀
-    autoplaySpeed: 3000, // 자동 캐러셀 속도
-    initialSlide: 1, // 첫 컨텐츠 번호
+    autoplaySpeed: 3500, // 자동 캐러셀 속도
+    initialSlide: 0, // 첫 컨텐츠 번호
     pauseOnFocus: true, // focus시 정지
     pauseOnHover: true, // hover시 정지
     appendDots: (dots: any) => (
@@ -66,42 +66,36 @@ const Main = () => {
         <div className={styles.inner}>
           <div className={styles.sliderContainer}>
             <Slider {...settings}>
-              <SliderItem id={"1"} />
-              <SliderItem id={"2"} />
-              <SliderItem id={"3"} />
-              <SliderItem id={"4"} />
-              <SliderItem id={"5"} />
-              <SliderItem id={"6"} />
+              <SliderItem id={"1"} path={""} />
+              <SliderItem id={"2"} path={"academy"} />
+              <SliderItem id={"3"} path={"teacher"} />
+              <SliderItem id={"4"} path={""} />
+              <SliderItem id={"5"} path={"academy"} />
+              <SliderItem id={"6"} path={"teacher"} />
             </Slider>
           </div>
-          <div className={styles.col}>
-            <div className={styles.row}>
-              <Banner 
-                bannerWidth={"longBanner"} 
-                bannerTitle={"내 주변 학원"} 
-                bannerColor={"bannerColor1"} 
-                path={"academy"} 
+          <div className={styles.bannerInner}>
+            <div className={styles.alignRow}>
+              <Banner
+                bannerSize={"lg"}
+                bannerTitle={"지도에서 찾기"}
+                bannerColor={"1"}
+                path={"map"}
               />
-              <Banner 
-                bannerWidth={"shortBanner"}
-                bannerTitle={"학원 구인구직"} 
-                bannerColor={"bannerColor2"} 
-                path={"work"} 
-              />
-            </div>
-            <div className={styles.row}>
-              <Banner 
-                bannerWidth={"shortBanner"}
-                bannerTitle={"내 주변 과외선생님"} 
-                bannerColor={"bannerColor3"} 
-                path={"teacher"} 
-              />
-              <Banner 
-                bannerWidth={"longBanner"} 
-                bannerTitle={"지도에서 찾기"} 
-                bannerColor={"bannerColor4"} 
-                path={"map"} 
-              />
+              <div className={styles.alignCol}>
+                <Banner
+                  bannerSize={"sm"}
+                  bannerTitle={"내 주변 과외선생님"}
+                  bannerColor={"2"}
+                  path={"teacher"}
+                />
+                <Banner
+                  bannerSize={"sm"}
+                  bannerTitle={"내 주변 학원"}
+                  bannerColor={"3"}
+                  path={"academy"}
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -1,13 +1,48 @@
-import React from 'react'
+import { useEffect, useState } from 'react';
 import containers from '../styles/pages/Container.module.css';
 import styles from '../styles/components/TeacherInfo.module.css'
 import { Link } from 'react-router-dom';
 import PriceList from './PriceList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot, faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faLocationDot, faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 
-const TeacherInfo = (props: { id: any }) => {
+interface UserContact {
+  tel: string;
+  mail: string;
+  instagram: string;
+}
+
+interface TInfo {
+  name: string;
+  actRange: string[];
+  description: string;
+  tags: string[];
+}
+
+const TeacherInfo = (props: { param?: any }) => {
+  const [userCareer, setUserCareer] = useState<string[]>([]);
+  const [price, setPrice] = useState<string>("160,000");
+  const [contact, setContact] = useState<UserContact>({
+    tel: "010-1234-1234",
+    mail: "thisismail@gmail.com", 
+    instagram: "@thisis.insta"
+  });
+  const [teacher, setTeacher] = useState<TInfo>({
+    name: "OOO",
+    actRange: ["지역1", "지역2"],
+    description: 
+    `안녕하세요! 과외 선생님 OOO 입니다.
+    만나서 반가워요.`,
+    tags: ["국어", "수학"]
+  });
+
+  useEffect(() => {
+    let careers = ["OO대학 OO학과 재학", "OO검정능력시헙 2급"];
+    let arr = [...careers];
+    setUserCareer(arr);
+  }, []);
+
   return (
     <div className={containers.container}>
       <div className={containers.inner}>
@@ -17,38 +52,44 @@ const TeacherInfo = (props: { id: any }) => {
 
             <div className={styles.mainInfo}>
               <div className={styles.teachName}>
-                <div>임현준</div>
+                <div>{teacher.name}</div>
                 <span>선생님</span>
               </div>
 
-              <div className={styles.location}>
-                <span>
-                  <FontAwesomeIcon icon={faLocationDot} className={styles.loIcon}/>
-                </span>
-                <span className={styles.loText}>경상남도 김해시 내외동</span>
-              </div>
-
               <div className={styles.actRange}>
-                활동범위 : 동상동, 회현동, 부원동, 내외동, 북부동
+                <span>
+                  <FontAwesomeIcon
+                    icon={faLocationDot}
+                    className={styles.loIcon}
+                  />
+                  &nbsp;활동범위 :
+                </span>
+                <span className={styles.loText}>
+                  {teacher.actRange.map(
+                    (value, index, array) =>
+                      `${value}${index === array.length - 1 ? "" : ", "}`
+                  )}
+                </span>
               </div>
             </div>
           </div>
 
           <div className={styles.introContainer}>
-            <div className={styles.intro}>
-            낭만 코선생입니다. 
-            코선생 소개글 ~~
-            </div>
+            <div className={styles.intro}>{teacher.description}</div>
           </div>
 
           <hr className={styles.contour} />
-          
+
           <div className={styles.priceLists}>
             <div className={styles.infoInner}>
               <div className={styles.infoTitle}>수업 가격</div>
-              <PriceList classTitle="수학과외" />
-              <PriceList classTitle="영어과외" />
-              <PriceList classTitle="국어과외" />
+              {teacher.tags.map((value: any) => (
+                <PriceList
+                  key={`${value}`}
+                  classTitle={`${value}과외`}
+                  price={price}
+                />
+              ))}
             </div>
           </div>
 
@@ -57,23 +98,42 @@ const TeacherInfo = (props: { id: any }) => {
           <div className={styles.infoInner}>
             <div className={styles.infoTitle}>경력사항</div>
             <div className={styles.content}>
-              <div>코큰대학 안마학과 석사</div>
-              <div>코지마 안마의자 자격증</div>
+              {userCareer.map((value: string) => (
+                <div>{value}</div>
+              ))}
             </div>
           </div>
 
           <hr className={styles.contour} />
 
           <div className={styles.infoInner}>
-            <div className={styles.infoTitle}>경력사항</div>
+            <div className={styles.infoTitle}>연락처</div>
             <div className={styles.content}>
               <div>
-                <FontAwesomeIcon icon={faInstagram} className={styles.snsIcon} />
-                <Link to="https://www.instagram.com/hyeonjun1782/?utm_source=ig_web_button_share_sheet&igshid=OGQ5ZDc2ODk2ZA==" className={styles.snsText}>@hyeonjun1782</Link>
+                <FontAwesomeIcon
+                  icon={faInstagram}
+                  className={styles.snsIcon}
+                />
+                <Link
+                  to={`https://www.instagram.com/${contact.instagram}/`}
+                  className={styles.snsText}
+                >
+                  {contact.instagram}
+                </Link>
               </div>
+
               <div>
                 <FontAwesomeIcon icon={faPhone} className={styles.snsIcon} />
-                <Link to="" className={styles.snsText}>010-1234-1234</Link>
+                <Link to={`tel:${contact.tel}`} className={styles.snsText}>
+                  {contact.tel}
+                </Link>
+              </div>
+
+              <div>
+                <FontAwesomeIcon icon={faEnvelope} className={styles.snsIcon} />
+                <Link to={`mailto:${contact.mail}`} className={styles.snsText}>
+                  {contact.mail}
+                </Link>
               </div>
             </div>
           </div>

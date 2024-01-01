@@ -1,11 +1,11 @@
 import { faBullhorn, faHeadset, faNewspaper, faPenToSquare, faBan, faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import banner1 from './assets/img/slider-item1.png';
-import banner2 from './assets/img/slider-item1.png';
-import banner3 from './assets/img/slider-item1.png';
+import banner2 from './assets/img/slider-item2.png';
+import banner3 from './assets/img/slider-item3.png';
 import banner4 from './assets/img/slider-item1.png';
-import banner5 from './assets/img/slider-item1.png';
-import banner6 from './assets/img/slider-item1.png';
+import banner5 from './assets/img/slider-item2.png';
+import banner6 from './assets/img/slider-item3.png';
 
 export const getIconById = (targetId) => {
   const targetIconId = String(targetId);
