@@ -150,9 +150,7 @@ const AcademyDetail = (props: { param?: string }) => {
               </table>
               <h3>학원 후기</h3>
               <div className={styles.review}>
-                <div className={styles.opinion}>
-                ⭐4.7
-                </div>
+                <div className={styles.opinion}>⭐4.7</div>
                 <div className={styles.write}>
                   <div className={styles.writeWrap}>
                     <div className={styles.reviewOption}>매우좋음</div>
@@ -161,7 +159,12 @@ const AcademyDetail = (props: { param?: string }) => {
                     <div className={styles.reviewOption}>별로</div>
                     <div className={styles.reviewOption}>매우별로</div>
                   </div>
-                  <Button clickEvent={() => {}} size="middle" txt="리뷰 작성하기" type="full" />
+                  <Button
+                    clickEvent={() => {}}
+                    size="middle"
+                    txt="리뷰 작성하기"
+                    type="full"
+                  />
                 </div>
               </div>
               <div className={styles.area} />

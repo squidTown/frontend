@@ -6,7 +6,7 @@ import AddContainer from '../components/AddContainer';
 const Addition = () => {
   return (
     <>
-    <Header location='학원 등록하기'/>
+    <Header location='학원 등록'/>
     <AddContainer />
     <BottomNavbar />
     </>

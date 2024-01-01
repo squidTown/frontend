@@ -6,6 +6,7 @@ import AcademyItem from "./AcademyItem";
 import { useNavigate } from "react-router-dom";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AddButton from "./AddButton";
 
 const AcademyList = () => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const AcademyList = () => {
   return (
     <div className={containers.container}>
       <div className={containers.inner}>
+        <AddButton path="academy" />
         <div className={styles.search}>
           <div className={styles.input}>
             <span className={styles.icon}>

@@ -1,66 +1,95 @@
 .container {
-  width: 100%;
-  margin-top: 10%;
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 15%;
+}
+
+.container input {
+  padding: 2% 3%;
+  border: 2px solid rgb(186, 186, 186);
+  outline: none;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.inputContainer {
+  width: 80%;
+  height: 10%;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 5%;
+}
+
+.academyPeople {
+  width: 60%;
+}
+
+.peopleInput {
+  display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.inner {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-}
-
-.title {
-  font-size: 17px;
+.peopleInput span {
+  font-size: 21px;
   font-weight: bold;
-  margin-top: 5%;
 }
 
-.subtitle {
-  font-size: 12px;
-  margin: 2% 0;
+.purposeInput {
+  width: 100%;
 }
 
-.country {
+.purposeInput input {
+  margin-right: 10px;
+}
+
+.purposeList {
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  margin-bottom: 5%;
+}
+
+.btn {
+  width: 100%;
+  padding-bottom: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.academyTel {
+  height: 20%;
+}
+
+#academyTel {
+  width: 60%;
+  margin-top: 10px;
+}
+
+.price {
+  width: 100%;
+  height: 30%;
+  margin-top: 5px;
+}
+
+.signInput {
+  width: 60%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: start;
-  margin-top: 2%;
 }
 
-.country > span {
-  font-size: 13px;
-  margin-bottom: 5px;
+.signInput input {
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.country > input {
-  width: 94%;
-  height: 30px;
-  padding: 1% 3%;
-  border: 1px rgb(156, 156, 156) solid;
-  outline: none;
-  border-radius: 3px;
-}
-
-.academy {
+.priceList {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: start;
-  margin-top: 5%;
-}
-
-.academy > span {
-  font-size: 13px;
-  margin-bottom: 5px;
-}
-
-.academy > input {
-  width: 94%;
-  height: 30px;
-  padding: 1% 3%;
-  outline: none;
-  border-radius: 3px;
-  border: 1px rgb(156, 156, 156) solid;
+  overflow-x: auto;
+  margin-bottom: 5%;
 }
