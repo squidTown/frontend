@@ -3,10 +3,10 @@ import styles from "../styles/pages/EmailCheck.module.css";
 import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "../components/Button";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
-export const EmailCheck = (props: {
-  setCitation: React.Dispatch<React.SetStateAction<string>>;
-}) => {
+export const EmailCheck = (props: { setBtnTxt: any; setValue: any }) => {
   const { email } = useParams();
   const navigate = useNavigate();
   const [minutes, setMinutes] = useState<number>(10);
@@ -75,7 +75,7 @@ export const EmailCheck = (props: {
       .then((res) => {
         if (res.data.success === true) {
           alert("인증 완료");
-          props.setCitation('인증 완료')
+          props.setBtnTxt("인증완료");
           navigate(-1);
         } else {
           alert(res.data.success);
@@ -87,40 +87,39 @@ export const EmailCheck = (props: {
   };
 
   return (
-    <div>
-      <div className={styles.container}>
-        <div className={styles.wrapper}>
-          <div className={styles.bigText}>
-            <div className={styles.emailCheckText}>이메일 인증</div>
-          </div>
-          <div className={styles.smallText}>
-            <div className={styles.infoText}>인증번호 4자리를 입력해주세요</div>
-          </div>
-          <div className={styles.inputWrapper}>
-            {inputValues.map((value, index) => (
-              <input
-                key={index}
-                type="text"
-                maxLength={1}
-                className={styles.box}
-                value={value}
-                onChange={(e) => handleChange(index, e.target.value)}
-                ref={inputRefs[index]}
-              />
-            ))}
-          </div>
-          <div className={styles.againText}>인증코드 재전송</div>
-          <div className={styles.leftTime}>
-            {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
-          </div>
-          <div className={styles.authBtnWrapper}>
-            <Button
-              txt="인증 완료"
-              type="full"
-              size="big"
-              clickEvent={clickBtn}
+    <div className={styles.container}>
+      <div className={styles.wrapper}>
+        <div onClick={() => props.setValue(false)}><FontAwesomeIcon icon={faXmark} className={styles.xmark} /></div>
+        <div className={styles.bigText}>
+          <div className={styles.emailCheckText}>이메일 인증</div>
+        </div>
+        <div className={styles.smallText}>
+          <div className={styles.infoText}>인증번호 4자리를 입력해주세요</div>
+        </div>
+        <div className={styles.inputWrapper}>
+          {inputValues.map((value, index) => (
+            <input
+              key={index}
+              type="text"
+              maxLength={1}
+              className={styles.box}
+              value={value}
+              onChange={(e) => handleChange(index, e.target.value)}
+              ref={inputRefs[index]}
             />
-          </div>
+          ))}
+        </div>
+        <div className={styles.againText}>인증코드 재전송</div>
+        <div className={styles.leftTime}>
+          {minutes}:{seconds < 10 ? `0${seconds}` : seconds}
+        </div>
+        <div className={styles.authBtnWrapper}>
+          <Button
+            txt="인증 완료"
+            type="full"
+            size="big"
+            clickEvent={clickBtn}
+          />
         </div>
       </div>
     </div>

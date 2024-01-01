@@ -13,6 +13,8 @@ const Map = (props: { academyList: AcademyType[], location: string, setLocation:
   const [academyAddress, setAcademyAddress] = useState<string>("address");
   const [academyId, setAcademyId] = useState<number>(1);
   const [academyTags, setAcademyTags] = useState<string[]>([]);
+  const [adr1, setAdr1] = useState<string>('경북');
+  const [adr2, setAdr2] = useState<string>('의성군');
   const [nowState, setNowState] = useState({
     center: {
       lat: 33.450701,
@@ -41,6 +43,8 @@ const Map = (props: { academyList: AcademyType[], location: string, setLocation:
           nowState={nowState}
           setNowState={setNowState}
           setLocation={props.setLocation}
+          setAdr1={setAdr1}
+          setAdr2={setAdr2}
         />
       </div>
       <BottomNavbar />
@@ -48,7 +52,10 @@ const Map = (props: { academyList: AcademyType[], location: string, setLocation:
         list={props.academyList}
         setShowDetail={setShowDetail}
         toggleContainer={toggleContainer}
+        nowState={props.location}
         setNowState={setNowState}
+        adr1={adr1}
+        adr2={adr2}
       />
       {showDetail && (
         <Detail

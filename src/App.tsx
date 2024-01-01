@@ -8,12 +8,12 @@ import MainPage from './pages/MainPage'
 import { Login } from './pages/Login'
 import { Register } from './pages/Register'
 import UserInfoAlter from './pages/UserInfoAlter'
-import { EmailCheck } from './pages/EmailCheck'
 import TeachInfo from './pages/TeachInfo'
 import Academy from './pages/Academy'
 import Detail from './pages/Detail'
 import TeachList from './pages/TeachList'
 import MessagePage from './pages/MessagePage'
+import Addition from './pages/Addition'
 
 export interface UserInfo {
   userId: number;
@@ -46,7 +46,6 @@ export type TeacherType = {
 const App = () => {
   const [locations, setLocations] = useState("경북 의성군 봉양면 화전리");
   const academyList: AcademyType[] = location.positions;
-  const [citation, setCitation] = useState<string>('인증번호 발송')
 
   return (
     <div className='App'>
@@ -56,13 +55,13 @@ const App = () => {
         <Route path='/message' element={<MessagePage />} />
         <Route path='/mypage/:id' element={<MyPage />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/register' element={<Register citation={citation} />} />
+        <Route path='/register' element={<Register />} />
         <Route path='/alteruser/:id' element={<UserInfoAlter />} />
-        <Route path='/emailCheck/:email' element={<EmailCheck setCitation={setCitation} />} />
         <Route path='/teacher' element={<TeachList />} />
         <Route path='/teacher/:id' element={<TeachInfo />} />
         <Route path='/academy' element={<Academy />} />
         <Route path='/academy/:id' element={<Detail />} />
+        <Route path='/add/academy' element={<Addition />} />
       </Routes>
     </div>
   )

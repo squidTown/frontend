@@ -78,9 +78,11 @@
   margin: 10px 0 10px 0;
   padding: 3% 2% 3% 2%;
   border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-.career {
+.academyinfo {
   width: 96%;
   background-color: #fbfbfb;
   border: 1px solid #eee;
@@ -88,68 +90,114 @@
   margin: 10px 0 10px 0;
   padding: 3% 2% 3% 2%;
   border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#subtitle > svg {
+  width: 30px;
+  margin-right: 15px;
+}
+
+#subtitle {
+  font-weight: bold;
+}
+
+#txt > span {
+  margin-right: 10px;
+}
+
+.academyinfo > #subtitle {
+  width: 30%;
+}
+
+.academyinfo > #txt {
+  width: 70%;
 }
 
 hr {
   margin: 3% 0;
 }
 
-.price {
+.table {
   width: 100%;
-  height: 40%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  line-height: 50px;
+  margin-top: 5%;
+  margin-bottom: 10%;
 }
 
-.label {
-  width: 70%;
-  height: 90%;
-  border-radius: 20px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  box-shadow: 0px 1px 6px 1px #c0c2c7;
-  position: relative;
-  overflow: hidden;
+.table th {
+  background-color: #eaeaeaa3;
 }
 
-.label>span {
-  margin: 0 6% 5% 5%;
-  font-size: 19px;
+.itemLine > td {
+  border-top: 1px solid rgba(191, 197, 202, 0.686);
+}
+
+.option {
+  width: 30%;
   font-weight: bold;
-  z-index: 100;
 }
 
-.label>#name {
-  font-size: 26px;
+.option > svg {
+  width: 30px;
+  margin-right: 15px;
 }
 
-.a1 {
-  position: absolute;
+.detail {
   width: 50%;
-  height: 30%;
-  background-color: #dfe1f1;
-  top: 0;
-  left: 0;
-  border-radius: 30px;
-  transform: rotate(-45deg);
-}
-
-.a2 {
-  position: absolute;
-  width: 50%;
-  height: 30%;
-  background-color: #d2d6e6;
-  bottom: 0;
-  left: 0;
-  border-radius: 30px;
-  transform: rotate(-45deg);
+  word-break:break-all;
 }
 
 .contact {
-  margin: 3% 0 0 4%;
-  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.review {
+  width: 100%;
+  height: 40%;
+  display: flex;
+}
+
+.opinion {
+  width: 40%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.write {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.writeWrap {
+  display: flex;
+  margin-bottom: 10%;
+}
+
+.reviewOption {
+  width: 70px;
+  padding: 5px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #e8e9ef;
+  font-weight: bold;
+  margin: 0 5px;
+}
+
+.area {
+  width: 100%;
+  height: 10%;
 }

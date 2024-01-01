@@ -31,7 +31,7 @@ const Detail = (props: {
       <div className={styles.address}>{props.address}</div>
       <div className={styles.tagList}>
         {props.tag.map((value) => (
-          <TagItem tag={value} />
+          <TagItem key={`key-${value}`} tag={value} />
         ))}
       </div>
       <Button

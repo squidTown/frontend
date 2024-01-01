@@ -15,6 +15,8 @@ const BasicMap = (props: {
   nowState: any;
   setNowState: React.Dispatch<React.SetStateAction<any>>;
   setLocation: React.Dispatch<React.SetStateAction<string>>;
+  setAdr1: any;
+  setAdr2: any;
 }) => {
   useKakaoLoader();
 
@@ -69,12 +71,14 @@ const BasicMap = (props: {
     const callback = (result: any, status: any) => {
       if (status === kakao.maps.services.Status.OK) {
         props.setLocation(
-          result[0].address.region_1depth_name +
+            result[0].address.region_1depth_name +
             " " +
             result[0].address.region_2depth_name +
             " " +
             result[0].address.region_3depth_name
         );
+        props.setAdr1(result[0].address.region_1depth_name);
+        props.setAdr2(result[0].address.region_2depth_name);
       }
     };
 

@@ -37,3 +37,14 @@
 .button-full:hover {
   transform: scale(1.05);
 }
+
+.button-item {
+  width: 120px;
+  height: 60px;
+  border-radius: 20px;
+  margin-right: 10px;
+  box-shadow: none;
+  border: #5467f5 2px solid;
+  font-size: 15px;
+  font-weight: bolder;
+}

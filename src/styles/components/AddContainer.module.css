@@ -1,0 +1,95 @@
+.container {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+  padding-top: 15%;
+}
+
+.container input {
+  padding: 2% 3%;
+  border: 2px solid rgb(186, 186, 186);
+  outline: none;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.inputContainer {
+  width: 80%;
+  height: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 5%;
+}
+
+.academyPeople {
+  width: 60%;
+}
+
+.peopleInput {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.peopleInput span {
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.purposeInput {
+  width: 100%;
+}
+
+.purposeInput input {
+  margin-right: 10px;
+}
+
+.purposeList {
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  margin-bottom: 5%;
+}
+
+.btn {
+  width: 100%;
+  padding-bottom: 20%;
+  display: flex;
+  justify-content: center;
+}
+
+.academyTel {
+  height: 20%;
+}
+
+#academyTel {
+  width: 60%;
+  margin-top: 10px;
+}
+
+.price {
+  width: 100%;
+  height: 30%;
+  margin-top: 5px;
+}
+
+.signInput {
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.signInput input {
+  width: 50%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.priceList {
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  margin-bottom: 5%;
+}

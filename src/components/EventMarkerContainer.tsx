@@ -31,10 +31,9 @@ const EventMarkerContainer = (props: {
         lng: props.positionLng,
       }}
       onClick={(marker) => {
-        console.log(marker.getPosition());
         map.panTo(marker.getPosition());
         props.setShowDetail(true);
-        props.toggleContainer(props.content, academyAddress, props.id, props.tags);
+        props.toggleContainer(props.id, props.content, academyAddress, props.tags);
       }}
       onMouseOver={() => setIsVisible(true)}
       onMouseOut={() => setIsVisible(false)}
