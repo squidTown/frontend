@@ -16,7 +16,7 @@ export const Login = () => {
     e.preventDefault();
 
     await axios("/auth/login", {
-      baseURL: "localhost:3001/api",
+      baseURL: `${process.env.REACT_APP_API_URL}/api`,
       method: "POST",
       data: {
         email: id,

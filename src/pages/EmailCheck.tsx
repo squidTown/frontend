@@ -64,7 +64,7 @@ export const EmailCheck = (props: { setBtnTxt: any; setValue: any }) => {
 
   const clickBtn = () => {
     axios({
-      baseURL: "http://localhost:3001",
+      baseURL: `${process.env.REACT_APP_API_URL}`,
       method: "POST",
       url: "/api/mail/mailcheck",
       data: {
