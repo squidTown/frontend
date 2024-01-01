@@ -2,9 +2,9 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  padding-bottom: 40px;
-  height: calc(100vh - 104px);
+  gap: 30px;
+  padding-bottom: 30px;
+  height: calc(100vh - 90px);
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -19,7 +19,7 @@
 
 .sliderContainer {
   width: 100%;
-  min-height: 240px;
+  max-height: 240px;
   height: 100%;
   padding-top: 70px;
   display: flex;
@@ -41,42 +41,50 @@
   background-position: center;
 }
 
-.col {
-  padding: 0 40px;
+.bannerInner {
+  margin: 0px 40px;
   display: flex;
   flex-direction: column;
-  gap: 25px;
 }
 
-.row {
+.alignRow {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 25px;
+}
+
+.alignCol {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .banner {
   position: relative;
   width: 100%;
-  height: 240px;
   padding: 15px 15px;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   transition: all .3s ease;
 }
 
 .banner:hover {
   transform: scale(1.02);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 }
 
-.shortBanner {
-  max-width: 300px;
+.smBanner {
+  max-width: 315px;
+  height: 110px;
 }
 
-.longBanner {
+.lgBanner {
   max-width: 420px;
+  height: 270px;
 }
 
 .bannerTitle {
@@ -93,53 +101,40 @@
 }
 
 .bannerColor1 {
-  background: linear-gradient(to top, rgba(179, 212, 255, 0.8), #fff);
+  background: linear-gradient(to top, rgba(209, 224, 255, 0.8), #fff);
 }
 
 .bannerColor2 {
-  background: linear-gradient(to top, rgba(209, 234, 255, 0.8), #fff);
+  background: linear-gradient(to top, rgba(232, 255, 212, 0.2), #fff);
 }
 
 .bannerColor3 {
-  background: linear-gradient(to top, rgba(185, 225, 255, 0.8), #fff);
-}
-
-.bannerColor4 {
-  background: linear-gradient(to top, rgba(209, 224, 255, 0.8), #fff);
+  background: linear-gradient(to top, rgba(179, 225, 255, 0.2), #fff);
 }
 
 .academy {
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/img/academy.png");
+  background-image: url("../../assets/img/bnAcademy.png");
   background-repeat: no-repeat;
-  background-position: 110% 30px;
-  background-size: contain;  
-}
-
-.work {
-  width: 100%;
-  height: 100%;
-  background-image: url("../../assets/img/work.png");
-  background-repeat: no-repeat;
-  background-position: 110% 110px;
+  background-position: 110% 10px;
   background-size: contain;  
 }
 
 .teacher {
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/img/teacher.png");
+  background-image: url("../../assets/img/bnTeacher.png");
   background-repeat: no-repeat;
-  background-position: 110% 97px;
+  background-position: 110% 10px;
   background-size: contain;  
 }
 
 .map {
   width: 100%;
   height: 100%;
-  background-image: url("../../assets/img/map.png");
+  background-image: url("../../assets/img/bnMap.png");
   background-repeat: no-repeat;
-  background-position: 110% 30px;
+  background-position: 110% 50px;
   background-size: contain;  
 }

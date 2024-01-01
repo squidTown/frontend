@@ -24,7 +24,7 @@
   height: 100px;
   width: 100px;
   background-size: cover;
-  background-image: url("../../assets/img/test5.png");
+  background-image: url("../../assets/img/prfTeacher.png");
 }
 
 .mainInfo {
@@ -43,7 +43,6 @@
   font-weight: bold;
   font-size: 27px;
   line-height: 27px;
-  color: #5467f5;
 }
 
 .teachName > span {
@@ -55,7 +54,7 @@
   top: 8px;
 }
 
-.location {
+.actRange {
   display: flex;
   gap: 10px;
   margin: 10px 0 4px;
@@ -63,13 +62,17 @@
 }
 
 .loIcon, .loText, .actRange {
-  color: #494d56;
   letter-spacing: -0.25px;
   font-size: 14px;
 }
 
+.loText, .actRange {
+  color: #333;
+}
+
 .loIcon {
   margin-bottom: 2px;
+  color: #494d56;
 }
 
 .introContainer {
@@ -117,14 +120,8 @@
   position: relative;
 }
 
-.infoTitle {
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 26px;
-  color: #494d56;
-}
-
 .pList {
+  overflow: hidden;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -147,7 +144,8 @@
   display: flex;
   flex-direction: column;
   font-size: 16px;
-  color: #808080;
+  font-weight: bold;
+  color: #5467f5;
   padding: 20px 30px;
   width: 160px;
 }
@@ -168,7 +166,36 @@
   color: #494d56;
 }
 
-.carrer {
+.a1 {
+  position: absolute;
+  width: 38%;
+  height: 30%;
+  background-color: #dfe1f1;
+  top: 0;
+  right: 0;
+  border-radius: 30px;
+  transform: rotate(-45deg);
+}
+
+.a2 {
+  position: absolute;
+  width: 40%;
+  height: 30%;
+  background-color: #d2d6e6;
+  bottom: 0;
+  right: 0;
+  border-radius: 30px;
+  transform: rotate(-45deg);
+}
+
+.infoTitle {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 26px;
+  color: #494d56;
+}
+
+.content {
   font-size: 14px;
   line-height: 150%;
   font-weight: 400;
@@ -177,4 +204,14 @@
   color: #494d56;
   white-space: pre-line;
   word-break: keep-all;
+}
+
+.snsIcon, .snsText {
+  font-size: 15px;
+  color: #5467f5;
+  text-decoration: none;
+}
+
+.snsIcon {
+  margin-right: 8px;
 }
