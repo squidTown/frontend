@@ -16,7 +16,7 @@
     "@types/react": "^18.2.28",
     "@types/react-dom": "^18.2.13",
     "@types/react-modal": "^3.16.3",
-    "axios": "^1.6.0",
+    "axios": "^1.6.4",
     "dot-env": "^0.0.1",
     "dotenv": "^16.3.1",
     "http-proxy-middleware": "^2.0.6",
@@ -30,6 +30,7 @@
     "react-scripts": "5.0.1",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
+    "socket.io-client": "^4.7.2",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
   },

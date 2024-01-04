@@ -57,7 +57,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<MainPage location={locations} />} />
         <Route path='/map' element={<Map location={locations} setLocation={setLocations} />} />
-        <Route path='/message' element={<MessagePage />} />
+        <Route path='/message/:id' element={<MessagePage />} />
         <Route path='/mypage/:id' element={<MyPage />} />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
