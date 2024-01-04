@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import styles from "../styles/components/MyPageContainer.module.css";
 import containers from "../styles/pages/Container.module.css";
 import Button from "./Button";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import axiosInstance from "../utils/axiosInstance";
 import MyPageItem from "./MyPageItem";
 import { UserInfo } from "../App";
+import { myPageInfo } from "../api/userAPI";
+import { removeCookie } from "../utils/cookie";
 
 const MyPageContainer = (props: { id: any }) => {
   const navigate = useNavigate();
@@ -21,16 +21,8 @@ const MyPageContainer = (props: { id: any }) => {
   const [information, setInformation] = useState<UserInfo>();
 
   const clickLogOut = () => {
-    axios
-      .post("api/auth/logout", {
-        baseUrl: `${process.env.REACT_APP_API_URL}`
-      })
-      .then((res) => {
-        if (res.data.success) {
-          
-        }
-      })
-      .catch((err) => {});
+    removeCookie("Authorization",{ path: '/' });
+    navigate("/");
   };
 
   const clickAlter = () => {
@@ -38,16 +30,14 @@ const MyPageContainer = (props: { id: any }) => {
   };
 
   useEffect(() => {
-    axiosInstance("/api/user/mypage", {
-      method: "GET",
-    })
+    myPageInfo()
       .then((res) => {
         if (res.data.success) {
           setInformation(res.data.data);
         }
       })
       .catch((err) => {
-        // navigate('/login')
+        navigate('/login')
       });
   }, []);
 

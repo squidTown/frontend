@@ -15,6 +15,7 @@
   justify-content: center;
   border: 2px solid rgb(149, 149, 149);
   border-radius: 20px;
+  padding: 0 2%;
 }
 
 .icon {
@@ -22,7 +23,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 10px;
 }
 
 .icon > svg {
