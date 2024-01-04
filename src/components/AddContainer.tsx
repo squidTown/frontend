@@ -60,7 +60,6 @@ const AddContainer = () => {
       Personnel: acaPersonRef.current.value,
       subject: subjectList,
       purpose: "교육",
-      academyPrice: JSON.stringify(priceList),
       ArrayacademyPrice: priceList,
       address: acaAdrRef.current.value,
       Latitude: lat,
@@ -79,7 +78,7 @@ const AddContainer = () => {
           alert("학원 게시에 실패하였습니다!");
         }
       })
-      .catch((res) => console.log(res));
+      .catch((res) => alert("학원 게시에 실패하였습니다!"));
   };
 
   return (
@@ -228,7 +227,7 @@ const AddContainer = () => {
                       ...priceList,
                       {
                         academySubject: priceRef1.current.value,
-                        academyPrice: priceRef2.current.value,
+                        academyPrice: parseInt(priceRef2.current.value),
                         academyData: priceRef3.current.value,
                       },
                     ]);

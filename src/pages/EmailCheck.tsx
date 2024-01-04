@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../styles/pages/EmailCheck.module.css";
-import axios from "axios";
 import { useNavigate, useParams } from "react-router-dom";
 import Button from "../components/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
+import { mailCheck } from "../api/userAPI";
 
 export const EmailCheck = (props: { setBtnTxt: any; setValue: any }) => {
   const { email } = useParams();
@@ -62,15 +62,7 @@ export const EmailCheck = (props: { setBtnTxt: any; setValue: any }) => {
   };
 
   const clickBtn = () => {
-    axios({
-      baseURL: `${process.env.REACT_APP_API_URL}`,
-      method: "POST",
-      url: "api/mail/mailcheck",
-      data: {
-        email,
-        token: values,
-      },
-    })
+    mailCheck({ email, token: values })
       .then((res) => {
         if (res.data.success === true) {
           alert("인증 완료");
@@ -88,7 +80,9 @@ export const EmailCheck = (props: { setBtnTxt: any; setValue: any }) => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <div onClick={() => props.setValue(false)}><FontAwesomeIcon icon={faXmark} className={styles.xmark} /></div>
+        <div onClick={() => props.setValue(false)}>
+          <FontAwesomeIcon icon={faXmark} className={styles.xmark} />
+        </div>
         <div className={styles.bigText}>
           <div className={styles.emailCheckText}>이메일 인증</div>
         </div>
