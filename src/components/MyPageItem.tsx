@@ -7,8 +7,8 @@ const MyPageItem = (props: {txt: string, idx: number}) => {
 
   }
   return (
-    <div className={styles.container}>
-      <div className={styles.icon} onClick={() => toggleItem(props.idx)}>
+    <div className={styles.container} onClick={props.onClick}>
+      <div className={styles.icon}>
         {getIconById(props.idx)}
       </div>
       <div className={styles.txt}>{props.txt}</div>

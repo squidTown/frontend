@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import containers from '../styles/pages/Container.module.css';
 import styles from '../styles/components/TeacherInfo.module.css'
 import { Link } from 'react-router-dom';
@@ -42,6 +43,12 @@ const TeacherInfo = (props: { param?: any }) => {
     let arr = [...careers];
     setUserCareer(arr);
   }, []);
+
+  const navigate = useNavigate();
+
+  const goMessage = () => {
+    navigate(`/message/1`);
+  }
 
   return (
     <div className={containers.container}>
@@ -139,6 +146,9 @@ const TeacherInfo = (props: { param?: any }) => {
           </div>
 
           <hr className={styles.contour} />
+          <div onClick={goMessage} className={styles.startMessage} >
+            메세지 시작하기
+          </div>
         </div>
       </div>
     </div>

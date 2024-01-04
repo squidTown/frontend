@@ -15,7 +15,8 @@
 .button-empty {
   color: #5467f5;
   background-color: white;
-  box-shadow: 0px 0px 3px 1.5px rgb(195, 195, 195);
+  border: 2px solid #5467df;
+  transition: all .05s ease;
 }
 
 .button-big {
@@ -35,8 +36,17 @@
   background-color: #5467f5;
 }
 
+.button-empty:active {
+  background-color: #4457e5;
+}
+
 .button-full:hover {
   transform: scale(1.05);
+}
+
+.button-full:active {
+  transform: scale(0.98);
+  background-color: #4457e5;
 }
 
 .button-item {
