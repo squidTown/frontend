@@ -1,13 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../styles/pages/EmailCheck.module.css";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { mailCheck } from "../api/userAPI";
 
-export const EmailCheck = (props: { setBtnTxt: any; setValue: any }) => {
-  const { email } = useParams();
+export const EmailCheck = (props: {
+  setBtnTxt: any;
+  setValue: React.Dispatch<React.SetStateAction<boolean>>;
+  email: string;
+}) => {
   const navigate = useNavigate();
   const [minutes, setMinutes] = useState<number>(10);
   const [seconds, setSeconds] = useState<number>(0);
@@ -62,14 +65,14 @@ export const EmailCheck = (props: { setBtnTxt: any; setValue: any }) => {
   };
 
   const clickBtn = () => {
-    mailCheck({ email, token: values })
+    mailCheck({ email: props.email, token: values })
       .then((res) => {
-        if (res.data.success === true) {
+        if (res.success === true) {
           alert("인증 완료");
           props.setBtnTxt("인증완료");
-          navigate(-1);
+          props.setValue(false);
         } else {
-          alert(res.data.success);
+          alert(res.success);
         }
       })
       .catch((err) => {

@@ -1,31 +1,38 @@
-import { faBullhorn, faHeadset, faNewspaper, faPenToSquare, faBan, faBarsStaggered } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBullhorn,
+  faHeadset,
+  faNewspaper,
+  faPenToSquare,
+  faBan,
+  faBarsStaggered,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import banner1 from './assets/img/slider-item1.png';
-import banner2 from './assets/img/slider-item2.png';
-import banner3 from './assets/img/slider-item3.png';
-import banner4 from './assets/img/slider-item1.png';
-import banner5 from './assets/img/slider-item2.png';
-import banner6 from './assets/img/slider-item3.png';
+import banner1 from "./assets/img/slider-item1.png";
+import banner2 from "./assets/img/slider-item2.png";
+import banner3 from "./assets/img/slider-item3.png";
+import banner4 from "./assets/img/slider-item1.png";
+import banner5 from "./assets/img/slider-item2.png";
+import banner6 from "./assets/img/slider-item3.png";
 
 export const getIconById = (targetId) => {
   const targetIconId = String(targetId);
   switch (targetIconId) {
-    case "0": 
-      return <FontAwesomeIcon icon={faBullhorn} />
+    case "0":
+      return <FontAwesomeIcon icon={faBullhorn} />;
     case "1":
-      return <FontAwesomeIcon icon={faPenToSquare} />
-    case "2": 
-      return <FontAwesomeIcon icon={faBarsStaggered} />
+      return <FontAwesomeIcon icon={faPenToSquare} />;
+    case "2":
+      return <FontAwesomeIcon icon={faBarsStaggered} />;
     case "3":
-      return <FontAwesomeIcon icon={faHeadset} />
+      return <FontAwesomeIcon icon={faHeadset} />;
     case "4":
-      return <FontAwesomeIcon icon={faBan} />
+      return <FontAwesomeIcon icon={faNewspaper} />;
     case "5":
-      return <FontAwesomeIcon icon={faNewspaper} />
-    default: 
+      return <FontAwesomeIcon icon={faBan} />;
+    default:
       return null;
   }
-}
+};
 
 export const getBannerImgById = (targetId) => {
   const targetImgId = String(targetId);
@@ -45,4 +52,4 @@ export const getBannerImgById = (targetId) => {
     default:
       return null;
   }
-}
+};

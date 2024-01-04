@@ -8,13 +8,11 @@ export const createAccount = async (data) => {
 }
 
 export const sendEmail = async (email) => {
-  const res = await axios.post(`/api/mail/send`, email);
-  
-  return res.data;
+  await axios.post(`/api/mail/send`, {email});
 }
 
 export const mailCheck = async (data) => {
-  const res = await axios.post(`/api/mail/check`, data);
+  const res = await axios.post(`/api/mail/mailcheck`, data);
 
   return res.data;
 }

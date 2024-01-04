@@ -7,8 +7,8 @@ const customModalStyles: ReactModal.Styles = {
     backgroundColor: "rgb(79 79 81 / 40%)",
   },
   content: {
-    width: "600px",
-    height: "700px",
+    width: "700px",
+    height: "800px",
     zIndex: "150",
     position: "absolute",
     top: "50%",
@@ -22,7 +22,7 @@ const customModalStyles: ReactModal.Styles = {
   },
 };
 
-const Email = (props: { value: boolean; setModal: any; setBtnTxt: any; }) => {
+const Email = (props: { value: boolean; setModal: React.Dispatch<React.SetStateAction<boolean>>; setBtnTxt: any; email: string; }) => {
   return (
     <ReactModal
       isOpen={props.value}
@@ -31,7 +31,7 @@ const Email = (props: { value: boolean; setModal: any; setBtnTxt: any; }) => {
       shouldCloseOnOverlayClick={true}
       style={customModalStyles}
     >
-      <EmailCheck setBtnTxt={props.setBtnTxt} setValue={props.setModal} />
+      <EmailCheck setBtnTxt={props.setBtnTxt} setValue={props.setModal} email={props.email} />
     </ReactModal>
   );
 };

@@ -38,7 +38,7 @@ const Star = (props: { SetReviewScore: any }) => {
               key={`item-${idx}`}
               icon={faAward}
               style={{
-                color: "#f6b777",
+                color: "rgb(255, 196, 46)",
               }}
               onClick={() => toggleStar(item.idx)}
             />

@@ -40,3 +40,9 @@ export const deleteAcademy = async (id) => {
 
   return res.data;
 };
+
+export const uploadImg = async (param, data) => {
+  const res = await axios.post(`/api/academy/uploads/${param}`, data);
+
+  return res.data;
+}

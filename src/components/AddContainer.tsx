@@ -6,6 +6,7 @@ import PriceItem from "./PriceItem";
 import { useDaumPostcodePopup } from "react-daum-postcode";
 import { postcodeScriptUrl } from "react-daum-postcode/lib/loadPostcode";
 import { postAcademy } from "../api/academyAPI";
+import { useNavigate } from "react-router";
 
 interface AcademyPrice {
   academySubject: string;
@@ -14,6 +15,7 @@ interface AcademyPrice {
 }
 
 const AddContainer = () => {
+  const navigate = useNavigate();
   const acaNameRef: any = useRef();
   const acaPersonRef: any = useRef();
   const acaAdrRef: any = useRef();
@@ -72,13 +74,22 @@ const AddContainer = () => {
       ],
     })
       .then((res) => {
-        if (res.success) {
-          alert("학원을 게시하였습니다!");
-        } else {
-          alert("학원 게시에 실패하였습니다!");
-        }
+        alert("학원을 게시하였습니다 !");
+        navigate('/');
       })
       .catch((res) => alert("학원 게시에 실패하였습니다!"));
+  };
+
+  const [imgFile, setImgFile] = useState<any>("");
+  const imgRef: any = useRef();
+
+  const saveImgFile = () => {
+    const file = imgRef.current.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setImgFile(reader.result);
+    };
   };
 
   return (
@@ -86,6 +97,30 @@ const AddContainer = () => {
       <div className={container.container}>
         <div className={container.inner}>
           <div className={styles.container}>
+            <span
+              style={{
+                fontSize: "19px",
+                fontWeight: "bold",
+                color: "#333",
+              }}
+            >
+              학원 대표 사진
+            </span>
+                <div className={styles.imgCon} style={{
+                  backgroundImage: `url(${imgFile ? imgFile : '/defaultBack.png'})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center"
+                }}>
+                
+                </div>
+            <div className={styles.imgBox}>
+              <input
+                type="file"
+                onChange={saveImgFile}
+                accept="image/*"
+                ref={imgRef}
+              />
+            </div>
             <div className={`${styles.academyName} ${styles.inputContainer}`}>
               <span>학원 이름</span>
               <input type="text" id={styles.academyName} ref={acaNameRef} />

@@ -181,8 +181,20 @@ hr {
 
 .reviewList {
   width: 100%;
+  height: 40%;
+  overflow-y: auto;
+}
+
+.reviewList::-webkit-scrollbar {
+  width: 0px;
+}
+
+.wrapList {
+  width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  overflow-y: auto;
 }
 
 .area {

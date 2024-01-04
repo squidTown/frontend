@@ -100,6 +100,14 @@ b {
   transition: all ease-in-out .15s;
 }
 
+.idBtn:disabled {
+  background-color: #ccc;
+}
+
+.idBtn:disabled:hover  {
+  background-color: #ccc;
+}
+
 .idBtn:hover, .joinBtn:hover {
   background-color: #4b5eea;
 }

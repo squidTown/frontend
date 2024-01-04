@@ -15,8 +15,8 @@ const MyPageContainer = (props: { id: any }) => {
     "후기관리",
     "올린 게시물들",
     "문의하기",
-    "차단목록",
     "약관 읽어보기",
+    "회원탈퇴",
   ];
   const [information, setInformation] = useState<UserInfo>();
 

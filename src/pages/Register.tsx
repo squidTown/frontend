@@ -104,7 +104,7 @@ export const Register = () => {
   };
 
   const sendEmailBtn = () => {
-    sendEmail()
+    sendEmail(email);
   };
 
   const compltBtn = () => {
@@ -147,6 +147,7 @@ export const Register = () => {
         value={checkValue}
         setModal={setCheckValue}
         setBtnTxt={setBtnTxt}
+        email={email}
       />
       <div className={styles.container}>
         <div className={styles.wrapper}>
@@ -170,7 +171,7 @@ export const Register = () => {
                     onChange={toggleMail}
                     value={email}
                   ></input>
-                  <button className={styles.idBtn} onClick={checkMail}>
+                  <button className={styles.idBtn} onClick={checkMail} disabled={btnTxt === '인증완료'}>
                     {btnTxt}
                   </button>
                 </div>

@@ -15,6 +15,7 @@ import TagItem from "./TagItem";
 import Review from "./review/Review";
 import { getReviewList } from "../api/reviewAPI";
 import { getAcademy } from "../api/academyAPI";
+import ReviewItem from "./review/ReviewItem";
 
 interface AcademyInfo {
   id: string;
@@ -24,9 +25,17 @@ interface AcademyInfo {
   tags: string[];
 }
 
+export interface ReviewType {
+  reviewId: string;
+  rName: string;
+  PostId: string;
+  text: string;
+  star: number;
+}
+
 const AcademyDetail = (props: { param?: string }) => {
   const navigate = useNavigate();
-  const [reviewList, setReviewList] = useState<string[]>();
+  const [reviewList, setReviewList] = useState<ReviewType[]>();
   const [contact, setContact] = useState<string[]>([
     "010-4134-1275",
     "mail@gmail.com",
@@ -71,17 +80,17 @@ const AcademyDetail = (props: { param?: string }) => {
       name: data.data.academyName,
       location: data.data.address,
       description: data.data.academyInfo,
-      tags: data.data.subject
-    })
+      tags: data.data.subject,
+    });
     setContact(data.data.sns);
     setacademyInfo({
       count: data.data.Personnel,
       goal: [data.data.purpose],
-    })
+    });
     setAcademyPrice(JSON.parse(data.data.academyPrice));
     const review = await getReviewList(props.param);
     setReviewList(review.review);
-  }
+  };
 
   return (
     <div className={containers.container}>
@@ -167,15 +176,14 @@ const AcademyDetail = (props: { param?: string }) => {
                     <th>수강기간</th>
                   </tr>
                   {academyPrice.map((value, idx) => {
-                    return(
-                    <tr className={styles.itemLine} key={`price-${idx}`}>
-                      <td>{value.academySubject}</td>
-                      <td>{value.academyPrice.toLocaleString()}</td>
-                      <td>{value.academyData}</td>
-                    </tr>
-                    )
-                  }
-                  )}
+                    return (
+                      <tr className={styles.itemLine} key={`price-${idx}`}>
+                        <td>{value.academySubject}</td>
+                        <td>{value.academyPrice.toLocaleString()}</td>
+                        <td>{value.academyData}</td>
+                      </tr>
+                    );
+                  })}
                 </tbody>
               </table>
               <h3>학원 후기</h3>
@@ -186,9 +194,13 @@ const AcademyDetail = (props: { param?: string }) => {
               </div>
               <hr />
               <div className={styles.reviewList}>
-                {reviewList?.map((value, idx) => (
-                  <div key={`review-${idx}`}>sdsd</div>
-                ))}
+                <div className={styles.wrapList}>
+                  {reviewList
+                    ? reviewList?.map((value, idx) => (
+                        <ReviewItem key={`review-${idx}`} value={value} />
+                      ))
+                    : <div>리뷰를 처음으로 작성해보세요</div>}
+                </div>
               </div>
               <div className={styles.area} />
             </div>
