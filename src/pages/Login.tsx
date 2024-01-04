@@ -4,29 +4,26 @@ import styles from "../styles/pages/Login.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faLock } from "@fortawesome/free-solid-svg-icons";
-import axios from "axios";
 import { setCookie } from "../utils/cookie";
+import { loginAccount } from "../api/userAPI";
 
 export const Login = () => {
   const navigate = useNavigate();
   const [id, setId] = useState("");
   const [pw, setPw] = useState("");
 
-  const submit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    await axios("/auth/login", {
-      baseURL: "localhost:3001/api",
-      method: "POST",
-      data: {
-        email: id,
-        password: pw,
-      },
+    loginAccount({
+      email: id,
+      password: pw,
     })
       .then((res) => {
-        if (res.data.success === true) {
-          if (res.data.token) {
-            setCookie("jwt", `${res.data.token}`, {
+        if (res.success) {
+          console.log("success 완료")
+          if (res.token) {
+            setCookie("Authorization", `${res.token}`, {
               path: "/",
               httponly: true,
               secure: true,

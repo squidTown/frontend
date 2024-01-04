@@ -12,9 +12,12 @@ import {
   faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import TagItem from "./TagItem";
-import Button from "./Button";
+import Review from "./review/Review";
+import { getReviewList } from "../api/reviewAPI";
+import { getAcademy } from "../api/academyAPI";
 
 interface AcademyInfo {
+  id: string;
   name: string;
   location: string;
   description: string;
@@ -23,12 +26,14 @@ interface AcademyInfo {
 
 const AcademyDetail = (props: { param?: string }) => {
   const navigate = useNavigate();
+  const [reviewList, setReviewList] = useState<string[]>();
   const [contact, setContact] = useState<string[]>([
     "010-4134-1275",
     "mail@gmail.com",
     "kang._.m_w",
   ]);
   const [academy, setAcademy] = useState<AcademyInfo>({
+    id: "23",
     name: "학원이름",
     location: "학원위치",
     description:
@@ -37,26 +42,46 @@ const AcademyDetail = (props: { param?: string }) => {
   });
   const [academyInfo, setacademyInfo] = useState({
     count: "5 ~ 9",
-    subject: academy.tags,
     goal: ["입시", "수능", "성적향상"],
   });
   const [academyPrice, setAcademyPrice] = useState([
     {
-      subject: "수학",
-      price: 100000,
-      date: "한 달",
+      academySubject: "수학",
+      academyPrice: 100000,
+      academyData: "한 달",
     },
     {
-      subject: "영어",
-      price: 150000,
-      date: "일 년",
+      academySubject: "영어",
+      academyPrice: 150000,
+      academyData: "일 년",
     },
   ]);
   const goPrev = () => {
     navigate(-1);
   };
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    getInfo();
+  }, []);
+
+  const getInfo = async () => {
+    const data = await getAcademy(props.param);
+    setAcademy({
+      id: data.data.academyId,
+      name: data.data.academyName,
+      location: data.data.address,
+      description: data.data.academyInfo,
+      tags: data.data.subject
+    })
+    setContact(data.data.sns);
+    setacademyInfo({
+      count: data.data.Personnel,
+      goal: [data.data.purpose],
+    })
+    setAcademyPrice(JSON.parse(data.data.academyPrice));
+    const review = await getReviewList(props.param);
+    setReviewList(review.review);
+  }
 
   return (
     <div className={containers.container}>
@@ -77,8 +102,8 @@ const AcademyDetail = (props: { param?: string }) => {
                 &emsp;{academy.location}
               </span>
               <span className={styles.tag}>
-                {academy.tags.map((value) => (
-                  <TagItem tag={value} />
+                {academy.tags.map((value, idx) => (
+                  <TagItem key={`academyItem-${idx}`} tag={value} />
                 ))}
               </span>
             </div>
@@ -95,8 +120,8 @@ const AcademyDetail = (props: { param?: string }) => {
                   수강 과목
                 </div>
                 <div id={styles.txt}>
-                  {academyInfo.subject.map((value) => (
-                    <span>{value}</span>
+                  {academy.tags.map((value, idx) => (
+                    <span key={`subject-${idx}`}>{value}</span>
                   ))}
                 </div>
                 <div id={styles.subtitle}>
@@ -104,8 +129,8 @@ const AcademyDetail = (props: { param?: string }) => {
                   수강 목적
                 </div>
                 <div id={styles.txt}>
-                  {academyInfo.goal.map((value) => (
-                    <span>{value}</span>
+                  {academyInfo.goal.map((value, idx) => (
+                    <span key={`academy-goal-${idx}`}>{value}</span>
                   ))}
                 </div>
               </div>
@@ -122,8 +147,8 @@ const AcademyDetail = (props: { param?: string }) => {
                   연락처
                 </div>
                 <div className={`${styles.detail} ${styles.contact}`}>
-                  {contact.map((value) => (
-                    <span>{value}</span>
+                  {contact.map((value, idx) => (
+                    <span key={`contact-${idx}`}>{value}</span>
                   ))}
                 </div>
                 <div className={styles.option}>
@@ -135,37 +160,35 @@ const AcademyDetail = (props: { param?: string }) => {
               <hr />
               <h3>수업정보</h3>
               <table className={styles.table}>
-                <tr>
-                  <th>과목명</th>
-                  <th>강습비</th>
-                  <th>수강기간</th>
-                </tr>
-                {academyPrice.map((value) => (
-                  <tr className={styles.itemLine}>
-                    <td>{value.subject}</td>
-                    <td>{value.price.toLocaleString()}</td>
-                    <td>{value.date}</td>
+                <tbody>
+                  <tr>
+                    <th>과목명</th>
+                    <th>강습비</th>
+                    <th>수강기간</th>
                   </tr>
-                ))}
+                  {academyPrice.map((value, idx) => {
+                    return(
+                    <tr className={styles.itemLine} key={`price-${idx}`}>
+                      <td>{value.academySubject}</td>
+                      <td>{value.academyPrice.toLocaleString()}</td>
+                      <td>{value.academyData}</td>
+                    </tr>
+                    )
+                  }
+                  )}
+                </tbody>
               </table>
               <h3>학원 후기</h3>
               <div className={styles.review}>
-                <div className={styles.opinion}>⭐4.7</div>
                 <div className={styles.write}>
-                  <div className={styles.writeWrap}>
-                    <div className={styles.reviewOption}>매우좋음</div>
-                    <div className={styles.reviewOption}>좋음</div>
-                    <div className={styles.reviewOption}>보통</div>
-                    <div className={styles.reviewOption}>별로</div>
-                    <div className={styles.reviewOption}>매우별로</div>
-                  </div>
-                  <Button
-                    clickEvent={() => {}}
-                    size="middle"
-                    txt="리뷰 작성하기"
-                    type="full"
-                  />
+                  <Review param={props.param} />
                 </div>
+              </div>
+              <hr />
+              <div className={styles.reviewList}>
+                {reviewList?.map((value, idx) => (
+                  <div key={`review-${idx}`}>sdsd</div>
+                ))}
               </div>
               <div className={styles.area} />
             </div>

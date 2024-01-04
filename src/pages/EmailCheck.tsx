@@ -26,7 +26,6 @@ export const EmailCheck = (props: { setBtnTxt: any; setValue: any }) => {
         inputValues[0] + inputValues[1] + inputValues[2] + inputValues[3]
       )
     );
-    console.log(values);
   }, [inputValues]);
 
   useEffect(() => {
@@ -64,9 +63,9 @@ export const EmailCheck = (props: { setBtnTxt: any; setValue: any }) => {
 
   const clickBtn = () => {
     axios({
-      baseURL: "http://localhost:3001",
+      baseURL: `${process.env.REACT_APP_API_URL}`,
       method: "POST",
-      url: "/api/mail/mailcheck",
+      url: "api/mail/mailcheck",
       data: {
         email,
         token: values,

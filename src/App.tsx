@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import location from './assets/json/location.json'
 import Map from './pages/Map'
 import MyPage from './pages/MyPage'
 import MainPage from './pages/MainPage'
@@ -28,12 +27,19 @@ export interface UserInfo {
 }
 
 export type AcademyType = {
-  id: number;
-  lat: number;
-  lng: number;
+  academyId: string;
+  academyName: string;
   name: string;
-  location: string;
-  tag: string[];
+  Personnel: string;
+  subject: string[];
+  purpose: string[];
+  academyPrice: string;
+  address: string;
+  Latitude: number;
+  longitude: number;
+  academyInfo: string;
+  sns: string[];
+  img: string;
 };
 
 export type TeacherType = {
@@ -45,13 +51,12 @@ export type TeacherType = {
 
 const App = () => {
   const [locations, setLocations] = useState("경북 의성군 봉양면 화전리");
-  const academyList: AcademyType[] = location.positions;
 
   return (
     <div className='App'>
       <Routes>
         <Route path='/' element={<MainPage location={locations} />} />
-        <Route path='/map' element={<Map academyList={academyList} location={locations} setLocation={setLocations} />} />
+        <Route path='/map' element={<Map location={locations} setLocation={setLocations} />} />
         <Route path='/message/:id' element={<MessagePage />} />
         <Route path='/mypage/:id' element={<MyPage />} />
         <Route path='/login' element={<Login />} />
