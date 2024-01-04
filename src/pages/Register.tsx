@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import styles from "../styles/pages/Register.module.css";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import classNames from "classnames/bind";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -11,19 +10,24 @@ import {
   faVenus,
 } from "@fortawesome/free-solid-svg-icons";
 import Email from "../components/Email";
+import { createAccount, sendEmail } from "../api/userAPI";
+import { useDaumPostcodePopup } from "react-daum-postcode";
+import { postcodeScriptUrl } from "react-daum-postcode/lib/loadPostcode";
 
 export const Register = () => {
   const cx = classNames.bind(styles);
   const [email, setEmail] = useState("");
   const [pwd, setPwd] = useState("");
+  const [lat, setLat] = useState<number>();
+  const [lng, setLng] = useState<number>();
   const [pwdRe, setRePwd] = useState("");
   const [name, setName] = useState("");
   const [gender, setGender] = useState<number>(1);
-  const [address, setAddress] = useState("");
   const [birth, setBirth] = useState<string>("");
   const [checkValue, setCheckValue] = useState<boolean>(false);
   const [btnTxt, setBtnTxt] = useState<string>("메일인증");
-  
+  const adrRef: any = useRef();
+
   const [viewPwd, setViewPwd] = useState({
     state: "password",
     visible: false,
@@ -80,55 +84,27 @@ export const Register = () => {
     setGender(2);
   };
 
-  const toggleAddress = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setAddress(e.target.value);
-  };
-
   const toggleBirth = (e: React.ChangeEvent<HTMLInputElement>) => {
     setBirth(e.target.value);
   };
 
   const submit = () => {
-    console.log(birth);
-    axios({
-      baseURL: "http://localhost:3001",
-      method: "POST",
-      url: "/api/user/create",
-      data: {
-        email,
-        password: pwd,
-        name,
-        birth: "2006-11-01",
-        sex: gender,
-        addressName: address,
-        let: 2.22,
-        lnt: 1.11,
-      },
+    createAccount({
+      email: email,
+      password: pwd,
+      name: name,
+      birth: birth,
+      sex: gender,
+      addressName: adrRef.current.value,
+      lat: lat,
+      lnt: lng,
     })
-      .then((res) => {
-        if (res.data.success === true) {
-          alert('회원가입 완료!');
-          navigate('/login');
-        } else {
-          alert(res.data.success);
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+    .then((res) => navigate('/login'))
+    .catch((err) => console.log(err));
   };
 
-  const sendEmail = () => {
-    axios({
-      baseURL: "http://localhost:3001",
-      method: "POST",
-      url: "/api/mail/send",
-      data: {
-        email,
-      },
-    })
-      .then((res) => {})
-      .catch((err) => {});
+  const sendEmailBtn = () => {
+    sendEmail()
   };
 
   const compltBtn = () => {
@@ -141,11 +117,37 @@ export const Register = () => {
 
   const checkMail = () => {
     setCheckValue(true);
-  }
+    sendEmailBtn();
+  };
+
+  const open = useDaumPostcodePopup(postcodeScriptUrl);
+
+  const handleComplete = (data: any) => {
+    const geocoder = new window.kakao.maps.services.Geocoder();
+    geocoder.addressSearch(data.address, (result: any, status: any) => {
+      if (status === window.kakao.maps.services.Status.OK) {
+        const currentPos = new window.kakao.maps.LatLng(
+          result[0].y,
+          result[0].x
+        );
+        adrRef.current.value = data.address;
+        setLat(currentPos.getLat());
+        setLng(currentPos.getLng());
+      }
+    });
+  };
+
+  const clickInput = () => {
+    open({ onComplete: handleComplete });
+  };
 
   return (
     <div>
-      <Email value={checkValue} setModal={setCheckValue} setBtnTxt={setBtnTxt} />
+      <Email
+        value={checkValue}
+        setModal={setCheckValue}
+        setBtnTxt={setBtnTxt}
+      />
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.registerBox}>
@@ -168,10 +170,7 @@ export const Register = () => {
                     onChange={toggleMail}
                     value={email}
                   ></input>
-                  <button
-                    className={styles.idBtn}
-                    onClick={checkMail}
-                  >
+                  <button className={styles.idBtn} onClick={checkMail}>
                     {btnTxt}
                   </button>
                 </div>
@@ -264,9 +263,10 @@ export const Register = () => {
                   <input
                     type="text"
                     className={styles.totalInput}
-                    placeholder="주소를 입력해주세요"
-                    onChange={toggleAddress}
-                    value={address}
+                    placeholder="클릭하여 주소 입력"
+                    onClick={clickInput}
+                    ref={adrRef}
+                    readOnly={true}
                   ></input>
                 </div>
               </div>

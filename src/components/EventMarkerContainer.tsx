@@ -7,20 +7,20 @@ const EventMarkerContainer = (props: {
   positionLat: number;
   positionLng: number;
   content: string;
-  id: number;
+  id: string;
   tags: string[];
   setShowDetail: React.Dispatch<React.SetStateAction<boolean>>;
   toggleContainer: any;
-  list: AcademyType[];
+  list?: AcademyType[];
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [academyAddress, setAcademyAddress] = useState<string>();
   const map = useMap();
 
   useEffect(() => {
-    const matchingAcademy: AcademyType | undefined = props.list.find((academy) => academy.lat === props.positionLat);
+    const matchingAcademy: AcademyType | undefined = props.list?.find((academy) => academy.Latitude === props.positionLat);
     if (matchingAcademy) {
-      setAcademyAddress(matchingAcademy.location);
+      setAcademyAddress(matchingAcademy.address);
     }
   }, [props.list, props.positionLat, props.positionLng]);
 

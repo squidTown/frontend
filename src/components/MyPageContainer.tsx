@@ -23,7 +23,7 @@ const MyPageContainer = (props: { id: any }) => {
   const clickLogOut = () => {
     axios
       .post("api/auth/logout", {
-        baseUrl: 'localhost:3001/'
+        baseUrl: `${process.env.REACT_APP_API_URL}`
       })
       .then((res) => {
         if (res.data.success) {

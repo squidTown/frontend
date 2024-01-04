@@ -4,6 +4,7 @@ import location from "../assets/json/location.json";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import TeacherItem from "./TeacherItem";
+import AddButton from "./AddButton";
 
 const TeacherList = () => {
   const navigate = useNavigate();
@@ -16,6 +17,7 @@ const TeacherList = () => {
   return (
     <div className={containers.container}>
       <div className={containers.inner}>
+        <AddButton path="teacher" />
         <div className={styles.container}>
           {location.teachers.map((element) => (
             <TeacherItem
@@ -29,6 +31,6 @@ const TeacherList = () => {
       </div>
     </div>
   );
-}
+};
 
 export default TeacherList;
