@@ -215,3 +215,31 @@
 .snsIcon {
   margin-right: 8px;
 }
+
+.startMessage {
+  max-width: 790px;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  bottom: 10px;
+  display: flex;
+  align-self:center;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  background-color: #5467f5;
+  border-radius: 16px;
+  color: #fff;
+  font-size: 18px;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.startMessage:hover {
+  background-color: #4457e5;
+  transform: scale(1.01);
+}
+
+.startMessage:active {
+  transform: scale(0.98);
+}

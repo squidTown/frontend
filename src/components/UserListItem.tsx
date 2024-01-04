@@ -1,6 +1,6 @@
 import styles from '../styles/components/UserListItem.module.css';
 
-const ChatListItem = (props: {name: string; onClick: () => void, last: string;}) => {
+const ChatListItem = (props: {name: string, onClick: () => void, last: string}) => {
   return (
     <div className={styles.listItemInner} onClick={props.onClick}>
       <div className={styles.listItem}>
