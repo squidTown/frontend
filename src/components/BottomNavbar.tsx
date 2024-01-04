@@ -9,15 +9,16 @@ const BottomNavbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const userId = "1";
+  const chatId = "1";
 
   useEffect(() => {
     const path = location.pathname;
 
     if (path === "/") {
       setActivePage("home");
-    } else if (path === "/message") {
+    } else if (path === `/message/${userId}`) {
       setActivePage("message");
-    } else if (path === `/mypage/${userId}`) {
+    } else if (path === `/mypage/${chatId}`) {
       setActivePage("mypage");
     }
   }, [location.pathname]);
@@ -44,7 +45,7 @@ const BottomNavbar = () => {
           isActive={activePage === "message"}
           onClick={() => {
             setActivePage("message");
-            navigatePage("message");
+            navigatePage(`message/${chatId}`);
           }}
         />
         <NavbarButton

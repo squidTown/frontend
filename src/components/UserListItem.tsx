@@ -1,8 +1,8 @@
-import styles from '../styles/components/ChatListItem.module.css';
+import styles from '../styles/components/UserListItem.module.css';
 
-const ChatListItem = (props: {name: string; chat: string;}) => {
+const ChatListItem = (props: {name: string; onClick: () => void, last: string;}) => {
   return (
-    <div className={styles.listItemInner}>
+    <div className={styles.listItemInner} onClick={props.onClick}>
       <div className={styles.listItem}>
         <div className={styles.user}>
           <div className={styles.prfInner}>
@@ -13,7 +13,7 @@ const ChatListItem = (props: {name: string; chat: string;}) => {
               <span>{props.name}</span>
             </div>
             <div className={styles.chat}>
-              <span>{props.chat}</span>
+              <span>{props.last}</span>
             </div>
           </div>
         </div>
