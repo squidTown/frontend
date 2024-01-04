@@ -17,7 +17,12 @@ const Review = (props: { param: any }) => {
       text: reviewRef.current.value,
       star: reviewScore,
       PostId: props.param,
-    });
+    })
+    .then(res => {
+      window.location.reload();
+    }).catch(err => {
+      
+    })
     reviewRef.current.value = "";
   };
   return (

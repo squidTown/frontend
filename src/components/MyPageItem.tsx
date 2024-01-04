@@ -2,10 +2,7 @@ import React from 'react'
 import styles from '../styles/components/MyPageItem.module.css'
 import { getIconById } from '../util'
 
-const MyPageItem = (props: {txt: string, idx: number}) => {
-  const toggleItem = (target: number) => {
-
-  }
+const MyPageItem = (props: {txt: string, idx: number, onClick: () => void}) => {
   return (
     <div className={styles.container} onClick={props.onClick}>
       <div className={styles.icon}>

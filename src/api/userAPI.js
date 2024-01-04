@@ -37,3 +37,11 @@ export const myPageInfo = async () => {
 
   return res;
 }
+
+export const myPostList = async () => {
+  const res = axiosInstance(`api/tutoring/findmy`, {
+    method: "GET",
+  })
+
+  return res
+}

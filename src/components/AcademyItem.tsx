@@ -22,7 +22,11 @@ const AcademyItem = (props: {
           });
       }}
     >
-      <div className={styles.image}></div>
+      <div className={styles.image} style={{
+        backgroundImage: `url(${props.list.img ? props.list.img : '/defaultBack.png'})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center"
+      }}></div>
       <div className={styles.detail}>
         <div className={styles.academy}>
           <span className={styles.title}>{props.list.academyName}</span>

@@ -8,6 +8,7 @@ import { UserInfo } from "../App";
 import { myPageInfo } from "../api/userAPI";
 import { removeCookie } from "../utils/cookie";
 import Modal from "react-modal";
+import MyPageModal from "./MyPageModal";
 
 const MyPageContainer = (props: { id: any }) => {
   const navigate = useNavigate();
@@ -21,6 +22,7 @@ const MyPageContainer = (props: { id: any }) => {
   ];
   const [information, setInformation] = useState<UserInfo>();
   const [modalOpen, setModalOpen] = useState(false);
+  const [data, setData] = useState();
 
   const customModalStyles: ReactModal.Styles = {
     overlay: {
@@ -33,9 +35,9 @@ const MyPageContainer = (props: { id: any }) => {
       left: "0",
     },
     content: {
-      maxWidth: "720px",
+      maxWidth: "570px",
       width: "100%",
-      height: "480px",
+      height: "620px",
       zIndex: "150",
       position: "absolute",
       top: "50%",
@@ -50,7 +52,7 @@ const MyPageContainer = (props: { id: any }) => {
   };
 
   const clickLogOut = () => {
-    removeCookie("Authorization",{ path: '/' });
+    removeCookie("Authorization", { path: "/" });
     navigate("/");
   };
 
@@ -59,7 +61,6 @@ const MyPageContainer = (props: { id: any }) => {
   };
 
   const handlePopupMessage = () => {
-    console.log('Toggling modalOpen');
     setModalOpen(!modalOpen);
   };
 
@@ -71,7 +72,7 @@ const MyPageContainer = (props: { id: any }) => {
         }
       })
       .catch((err) => {
-        navigate('/login')
+        navigate("/login");
       });
   }, []);
 
@@ -94,7 +95,12 @@ const MyPageContainer = (props: { id: any }) => {
             </div>
             <div className={styles.list}>
               {list.map((element, idx) => (
-                <MyPageItem key={`item${idx}`} txt={element} idx={idx} onClick={() => handlePopupMessage()} />
+                <MyPageItem
+                  key={`item${idx}`}
+                  txt={element}
+                  idx={idx}
+                  onClick={handlePopupMessage}
+                />
               ))}
             </div>
             <Modal
@@ -105,12 +111,17 @@ const MyPageContainer = (props: { id: any }) => {
               contentLabel="Pop up Message"
               shouldCloseOnOverlayClick={false}
             >
-              <div>
+              {data ? <MyPageModal /> : <div>
                 <div className={styles.noNotice}>
                   <span>아직 공지사항이 없습니다.</span>
                 </div>
-                <span className={styles.closeButton} onClick={handlePopupMessage}>닫기 X</span>
-              </div>
+                <span
+                  className={styles.closeButton}
+                  onClick={handlePopupMessage}
+                >
+                  닫기 X
+                </span>
+              </div>}
             </Modal>
             <div className={styles.btnContainer}>
               <Button
