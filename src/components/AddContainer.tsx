@@ -74,9 +74,9 @@ const AddContainer = () => {
     })
       .then((res) => {
         if (res.success) {
-          alert('학원을 게시하였습니다!');
+          alert("학원을 게시하였습니다!");
         } else {
-          alert('학원 게시에 실패하였습니다!');
+          alert("학원 게시에 실패하였습니다!");
         }
       })
       .catch((res) => console.log(res));
@@ -88,13 +88,13 @@ const AddContainer = () => {
         <div className={container.inner}>
           <div className={styles.container}>
             <div className={`${styles.academyName} ${styles.inputContainer}`}>
-              <h3>학원 이름</h3>
+              <span>학원 이름</span>
               <input type="text" id={styles.academyName} ref={acaNameRef} />
             </div>
             <div
               className={`${styles.academyAddress} ${styles.inputContainer}`}
             >
-              <h3>학원 상세 주소</h3>
+              <span>학원 상세 주소</span>
               <input
                 type="text"
                 placeholder="클릭하여 주소 검색"
@@ -105,11 +105,11 @@ const AddContainer = () => {
               />
             </div>
             <div className={`${styles.academyInfo} ${styles.inputContainer}`}>
-              <h3>학원 소개</h3>
+              <span>학원 소개</span>
               <input type="text" id={styles.academyInfo} ref={acaInfoRef} />
             </div>
             <div className={`${styles.academyTel} ${styles.inputContainer}`}>
-              <h3>학원 연락처</h3>
+              <span>학원 연락처</span>
               <input
                 type="text"
                 id={styles.academyTel}
@@ -130,18 +130,16 @@ const AddContainer = () => {
               />
             </div>
             <div className={`${styles.academyPeople} ${styles.inputContainer}`}>
-              <h3>수업 인원</h3>
-              <div className={styles.peopleInput}>
-                <input
-                  type="number"
-                  placeholder="ex) 5"
-                  min={1}
-                  ref={acaPersonRef}
-                />
-              </div>
+              <span>수업 인원</span>
+              <input
+                type="number"
+                placeholder="ex) 5"
+                min={1}
+                ref={acaPersonRef}
+              />
             </div>
             <div className={`${styles.purpose} ${styles.inputContainer}`}>
-              <h3>교육 목적</h3>
+              <span>교육 목적</span>
               <div className={styles.purposeInput}>
                 <input
                   type="text"
@@ -176,7 +174,7 @@ const AddContainer = () => {
               ))}
             </div>
             <div className={`${styles.purpose} ${styles.inputContainer}`}>
-              <h3>교육 분야</h3>
+              <span>교육 분야</span>
               <div className={styles.purposeInput}>
                 <input type="text" placeholder="ex) 수학" ref={subjectRef} />
                 <Button
@@ -206,9 +204,9 @@ const AddContainer = () => {
                 />
               ))}
             </div>
-            <h3>가격</h3>
             <div className={`${styles.price} ${styles.inputContainer}`}>
               <div className={styles.signInput}>
+                <span>가격</span>
                 <input
                   type="text"
                   placeholder="수강 과목 ex) 수학"

@@ -71,7 +71,8 @@ export const Login = () => {
           <div className={styles.underBar}>
             <div className={styles.underBarContainer}>
               <div className={styles.underBarCheckbox}>
-                <input type="checkbox" /> 로그인 상태 유지
+                <span>로그인 상태 유지</span>
+                <input type="checkbox" /> 
               </div>
               <div className={styles.lostPw}>비밀번호 찾기</div>
             </div>
