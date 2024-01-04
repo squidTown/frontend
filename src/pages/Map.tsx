@@ -1,20 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../styles/pages/Map.module.css";
 import BasicMap from "../components/BasicMap";
 import LeftNavbar from "../components/LeftNavbar";
-import { AcademyType } from "../App";
 import Header from "../components/Header";
 import Detail from "../components/Detail";
 import BottomNavbar from "../components/BottomNavbar";
+import { AcademyType } from "../App";
+import { getAcademyListAll } from "../api/academyAPI";
 
-const Map = (props: { academyList: AcademyType[], location: string, setLocation: any }) => {
+const Map = (props: { location: string; setLocation: any }) => {
   const [showDetail, setShowDetail] = useState<boolean>(false);
   const [academyName, setAcademyName] = useState<string>("name");
   const [academyAddress, setAcademyAddress] = useState<string>("address");
   const [academyId, setAcademyId] = useState<number>(1);
   const [academyTags, setAcademyTags] = useState<string[]>([]);
-  const [adr1, setAdr1] = useState<string>('경북');
-  const [adr2, setAdr2] = useState<string>('의성군');
+  const [adr1, setAdr1] = useState<string>("경북");
+  const [adr2, setAdr2] = useState<string>("의성군");
   const [nowState, setNowState] = useState({
     center: {
       lat: 33.450701,
@@ -23,21 +24,37 @@ const Map = (props: { academyList: AcademyType[], location: string, setLocation:
     errMsg: null,
     isLoading: true,
     isPanto: true,
-  })
+  });
 
-  const toggleContainer = (id: number, name: string, address: string, tag: string[]) => {
+  const toggleContainer = (
+    id: number,
+    name: string,
+    address: string,
+    tag: string[]
+  ) => {
     setAcademyName(name);
     setAcademyAddress(address);
     setAcademyId(id);
-    setAcademyTags(tag)
+    setAcademyTags(tag);
   };
+
+  const [academyList, setAcademyList] = useState<AcademyType[]>();
+
+  const getList = async () => {
+    const list = await getAcademyListAll();
+    setAcademyList(list.data);
+  };
+  
+  useEffect(() => {
+    getList();
+  }, []);
 
   return (
     <>
       <Header location={props.location} />
       <div className={styles.map}>
         <BasicMap
-          list={props.academyList}
+          list={academyList}
           setShowDetail={setShowDetail}
           toggleContainer={toggleContainer}
           nowState={nowState}
@@ -49,7 +66,7 @@ const Map = (props: { academyList: AcademyType[], location: string, setLocation:
       </div>
       <BottomNavbar />
       <LeftNavbar
-        list={props.academyList}
+        list={academyList}
         setShowDetail={setShowDetail}
         toggleContainer={toggleContainer}
         nowState={props.location}

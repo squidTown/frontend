@@ -5,6 +5,7 @@
 .env
 /.pnp
 .pnp.js
+/src/setupProxy.js
 
 # testing
 /coverage

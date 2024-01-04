@@ -4,7 +4,7 @@ import { AcademyType } from "../App";
 import AcademyItem from "./AcademyItem";
 
 const LeftNavbar = (props: {
-  list: AcademyType[];
+  list?: AcademyType[];
   setShowDetail: React.Dispatch<React.SetStateAction<boolean>>;
   toggleContainer: any;
   nowState: string;
@@ -12,17 +12,17 @@ const LeftNavbar = (props: {
   adr1: string,
   adr2: string
 }) => {
-  return (
+  return ( 
     <div className={styles.leftnav}>
-      {props.list.map((value) => (
-        value.location.includes(props.adr1) && value.location.includes(props.adr2) && 
-        <div key={`map-${value.id}-${value.name}`} className={styles.item}>
+      {props.list?.map((value) => (
+        value.address.includes(props.adr1) && value.address.includes(props.adr2) && 
+        <div key={`map-${value.academyId}-${value.academyName}`} className={styles.item}>
           <AcademyItem
             list={value}
             setShowDetail={props.setShowDetail}
             toggleContainer={props.toggleContainer}
             setNowState={props.setNowState}
-          />
+            />
         </div>
       ))}
     </div>

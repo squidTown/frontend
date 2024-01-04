@@ -171,7 +171,7 @@ hr {
 }
 
 .write {
-  width: 60%;
+  width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -179,22 +179,10 @@ hr {
   justify-content: center;
 }
 
-.writeWrap {
-  display: flex;
-  margin-bottom: 10%;
-}
-
-.reviewOption {
-  width: 70px;
-  padding: 5px;
-  height: 30px;
+.reviewList {
+  width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  border-radius: 5px;
-  background-color: #e8e9ef;
-  font-weight: bold;
-  margin: 0 5px;
 }
 
 .area {

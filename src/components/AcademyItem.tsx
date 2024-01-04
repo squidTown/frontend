@@ -5,7 +5,7 @@ import TagItem from "./TagItem";
 
 const AcademyItem = (props: {
   list: AcademyType;
-  setShowDetail: React.Dispatch<React.SetStateAction<boolean>>;
+  setShowDetail?: React.Dispatch<React.SetStateAction<boolean>>;
   toggleContainer: any;
   setNowState?: React.Dispatch<React.SetStateAction<any>>;
 }) => {
@@ -13,21 +13,22 @@ const AcademyItem = (props: {
     <div
       className={styles.container}
       onClick={() => {
-        props.setShowDetail(true);
-        props.toggleContainer(props.list.id, props.list.name, props.list.location, props.list.tag);
+        if (props.setShowDetail)
+          props.setShowDetail(true);
+        props.toggleContainer(props.list.academyId, props.list.academyName, props.list.address, props.list.subject);
         if (props.setNowState)
           props.setNowState({
-            center: { lat: props.list.lat, lng: props.list.lng },
+            center: { lat: props.list.Latitude, lng: props.list.longitude },
           });
       }}
     >
       <div className={styles.image}></div>
       <div className={styles.detail}>
         <div className={styles.academy}>
-          <span className={styles.title}>{props.list.name}</span>
-          <span className={styles.address}>{props.list.location}</span>
+          <span className={styles.title}>{props.list.academyName}</span>
+          <span className={styles.address}>{props.list.address}</span>
         </div>
-        <div className={styles.tag}>{props.list.tag.map((tag) => (
+        <div className={styles.tag}>{props.list.subject.map((tag) => (
           <TagItem key={`tags-${tag}`} tag={tag} />
         ))}</div>
       </div>

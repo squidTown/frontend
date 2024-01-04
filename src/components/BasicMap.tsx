@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Map } from "react-kakao-maps-sdk";
 import useKakaoLoader from "../hooks/useKaKaoLoader";
-import location from "../assets/json/location.json";
 import EventMarkerContainer from "./EventMarkerContainer";
 import { AcademyType } from "../App";
 import styles from "../styles/pages/Map.module.css";
@@ -11,7 +10,7 @@ import { faCrosshairs } from "@fortawesome/free-solid-svg-icons";
 const BasicMap = (props: {
   setShowDetail: React.Dispatch<React.SetStateAction<boolean>>;
   toggleContainer: any;
-  list: AcademyType[];
+  list?: AcademyType[];
   nowState: any;
   setNowState: React.Dispatch<React.SetStateAction<any>>;
   setLocation: React.Dispatch<React.SetStateAction<string>>;
@@ -19,16 +18,19 @@ const BasicMap = (props: {
   setAdr2: any;
 }) => {
   useKakaoLoader();
-
+  
   const mapRef = useRef<kakao.maps.Map>(null);
-  const [positions, setPositions] = useState<any>([]);
+  const [positions, setPositions] = useState<AcademyType[]>([]);
   const [now, setNow] = useState<any>({
     lat: 33.450701,
     lng: 126.570667,
   });
-
+  
   useEffect(() => {
-    setPositions(location.positions);
+    if(props.list) 
+      setPositions(props.list);
+  }, [props.list])
+  useEffect(() => {
 
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
@@ -99,14 +101,14 @@ const BasicMap = (props: {
         level={5}
         ref={mapRef}
       >
-        {positions.map((pos: AcademyType) => (
+        {positions.map((pos: AcademyType, idx: number) => (
           <EventMarkerContainer
-            key={`EventMarker-${pos.lat}-${pos.lng}-${pos.id}`}
-            positionLat={pos.lat}
-            positionLng={pos.lng}
-            content={pos.name}
-            id={pos.id}
-            tags={pos.tag}
+            key={`EventMarker-${pos.Latitude}-${pos.longitude}-${pos.academyId}-${idx}`}
+            positionLat={pos.Latitude}
+            positionLng={pos.longitude}
+            content={pos.academyName}
+            id={pos.academyId}
+            tags={pos.subject}
             setShowDetail={props.setShowDetail}
             toggleContainer={props.toggleContainer}
             list={props.list}

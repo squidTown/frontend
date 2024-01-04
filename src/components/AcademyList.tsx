@@ -1,25 +1,32 @@
 import React, { useEffect, useState } from "react";
 import containers from "../styles/pages/Container.module.css";
 import styles from "../styles/components/AcademyList.module.css";
-import location from "../assets/json/location.json";
 import AcademyItem from "./AcademyItem";
 import { useNavigate } from "react-router-dom";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import AddButton from "./AddButton";
-
+import { AcademyType } from "../App";
+import { getAcademyListAll } from "../api/academyAPI";
 const AcademyList = () => {
   const navigate = useNavigate();
   const [search, setSearch] = useState("");
-  const [showDetail, setShowDetail] = useState(false);
 
   const toggleContainer = (id: number) => {
     navigate(`/academy/${id}`);
   };
 
+  const [academyList, setAcademyList] = useState<AcademyType[]>();
+
+  const getList = async () => {
+    const list = await getAcademyListAll();
+    setAcademyList(list.data);
+  };
+  
   useEffect(() => {
-    console.log(search);
-  }, [search]);
+    getList();
+  }, []);
+
 
   return (
     <div className={containers.container}>
@@ -39,16 +46,17 @@ const AcademyList = () => {
           </div>
         </div>
         <div className={styles.container}>
-          {location.positions.map((element) => (
-            (element.name.includes(search) ||
-            element.tag.includes(search)) &&
-            <AcademyItem
-              key={`${element.id}item`}
-              list={element}
-              setShowDetail={setShowDetail}
-              toggleContainer={toggleContainer}
-            />
-          ))}
+          {academyList?.map(
+            (element) =>
+              (element.academyName.includes(search) ||
+                element.subject.includes(search)) && (
+                <AcademyItem
+                  key={`${element.academyId}item`}
+                  list={element}
+                  toggleContainer={toggleContainer}
+                />
+              )
+          )}
         </div>
       </div>
     </div>
