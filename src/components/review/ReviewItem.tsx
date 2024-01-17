@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import styles from "./ReviewItem.module.css";
-import { ReviewType } from "../AcademyDetail";
+import styles from "../../styles/components/Review/ReviewItem.module.css";
+import { ReviewType } from "../Academy/AcademyDetail";
 import { faAward } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import styles from "../styles/pages/Map.module.css";
-import BasicMap from "../components/BasicMap";
-import LeftNavbar from "../components/LeftNavbar";
-import Header from "../components/Header";
-import Detail from "../components/Detail";
-import BottomNavbar from "../components/BottomNavbar";
+import BasicMap from "../components/Map/BasicMap";
+import LeftNavbar from "../components/Navbar/LeftNavbar";
+import Header from "../components/Header/Header";
+import Detail from "../components/Navbar/Detail";
+import BottomNavbar from "../components/Navbar/BottomNavbar";
 import { AcademyType } from "../App";
 import { getAcademyListAll } from "../api/academyAPI";
 

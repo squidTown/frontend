@@ -1,0 +1,54 @@
+.detail {
+  width: 25%;
+  height: 85%;
+  padding: 2% 1% 3% 1%;
+  position: absolute;
+  top: 5%;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.back {
+  width: 95%;
+  height: 5%;
+  display: flex;
+  align-items: center;
+  padding-left: 5%;
+  cursor: pointer;
+  user-select: none;
+}
+
+.img {
+  width: 80%;
+  height: 30%;
+  margin-top: 10%;
+  border-radius: 10px;
+  background-image: url("../../../assets/img/—Pngtree—apartment\ icon_4359969.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.name {
+  margin-top: 5%;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.address {
+  margin-top: 3%;
+  font-size: 15px;
+}
+
+.tagList {
+  width: 100%;
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+

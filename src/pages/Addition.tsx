@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from '../components/Header';
-import BottomNavbar from '../components/BottomNavbar';
-import AddContainer from '../components/AddContainer';
+import Header from '../components/Header/Header';
+import BottomNavbar from '../components/Navbar/BottomNavbar';
+import AddContainer from '../components/Academy/AddContainer';
 
 const Addition = () => {
   return (

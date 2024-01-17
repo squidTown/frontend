@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
-import styles from "./Review.module.css";
+import styles from "../../styles/components/Review/Review.module.css";
 import Star from "./Star";
-import Button from "../Button";
+import Button from "../Button/Button";
 import { postReview } from "../../api/reviewAPI";
 
 export interface starType {

@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import Header from "../components/Header";
-import MyPageContainer from "../components/MyPageContainer";
-import BottomNavbar from "../components/BottomNavbar";
+import Header from "../components/Header/Header";
+import MyPageContainer from "../components/MyPage/MyPageContainer";
+import BottomNavbar from "../components/Navbar/BottomNavbar";
 
 const MyPage = () => {
   const { id } = useParams();

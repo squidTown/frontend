@@ -1,7 +1,7 @@
 import React from 'react'
-import AcademyList from '../components/AcademyList'
-import Header from '../components/Header'
-import BottomNavbar from '../components/BottomNavbar'
+import AcademyList from '../components/Academy/AcademyList'
+import Header from '../components/Header/Header'
+import BottomNavbar from '../components/Navbar/BottomNavbar'
 
 const Academy = () => {
   return (

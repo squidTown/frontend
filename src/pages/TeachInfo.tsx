@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
-import Header from "../components/Header";
-import TeacherInfo from '../components/TeacherInfo';
+import Header from "../components/Header/Header";
+import TeacherInfo from '../components/Teacher/TeacherInfo';
 
 const TeachInfo = () => {
   const { id } = useParams();

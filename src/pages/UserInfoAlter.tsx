@@ -1,8 +1,8 @@
 import React from 'react'
 import { useParams } from "react-router-dom";
-import Header from '../components/Header'
-import AlterUser from '../components/AlterUser'
-import BottomNavbar from '../components/BottomNavbar'
+import Header from '../components/Header/Header'
+import AlterUser from '../components/MyPage/AlterUser'
+import BottomNavbar from '../components/Navbar/BottomNavbar'
 
 const UserInfoAlter = () => {
   const { id } = useParams();

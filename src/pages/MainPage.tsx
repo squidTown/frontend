@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from '../components/Header'
-import Main from '../components/Main'
-import BottomNavbar from '../components/BottomNavbar'
+import Header from '../components/Header/Header'
+import Main from '../components/MainPage/Main'
+import BottomNavbar from '../components/Navbar/BottomNavbar'
 
 const MainPage = (props: {location: string}) => {
   return (

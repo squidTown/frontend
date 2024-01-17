@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from "../components/Header";
-import BottomNavbar from "../components/BottomNavbar";
-import TeacherList from '../components/TeacherList';
+import Header from "../components/Header/Header";
+import BottomNavbar from "../components/Navbar/BottomNavbar";
+import TeacherList from '../components/Teacher/TeacherList';
 
 const TeachList = () => {
   return (

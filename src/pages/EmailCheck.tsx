@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../styles/pages/EmailCheck.module.css";
 import { useNavigate } from "react-router-dom";
-import Button from "../components/Button";
+import Button from "../components/Button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { mailCheck } from "../api/userAPI";

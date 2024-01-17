@@ -9,7 +9,7 @@ import {
   faMars,
   faVenus,
 } from "@fortawesome/free-solid-svg-icons";
-import Email from "../components/Email";
+import Email from "../components/Modal/Email";
 import { createAccount, sendEmail } from "../api/userAPI";
 import { useDaumPostcodePopup } from "react-daum-postcode";
 import { postcodeScriptUrl } from "react-daum-postcode/lib/loadPostcode";
@@ -93,10 +93,10 @@ export const Register = () => {
       email: email,
       password: pwd,
       name: name,
-      birth: birth,
+      birth: birth.slice(0, 4) + birth.slice(5, 7) + birth.slice(8, 10),
       sex: gender,
       addressName: adrRef.current.value,
-      lat: lat,
+      let: lat,
       lnt: lng,
     })
     .then((res) => navigate('/login'))

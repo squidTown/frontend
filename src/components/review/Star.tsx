@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import styles from "./Review.module.css";
+import styles from "../../styles/components/Review/Review.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from "@fortawesome/free-regular-svg-icons";
 import { starType } from "./Review";
