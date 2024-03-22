@@ -18,11 +18,10 @@ const Review = (props: { param: any }) => {
       star: reviewScore,
       PostId: props.param,
     })
-    .then(res => {
-      window.location.reload();
-    }).catch(err => {
-      
-    })
+      .then((res) => {
+        window.location.reload();
+      })
+      .catch((err) => {});
     reviewRef.current.value = "";
   };
   return (

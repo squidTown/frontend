@@ -12,14 +12,14 @@ const ReviewItem = (props: { value: ReviewType }) => {
       arr[i] = true;
     }
     setNum(arr);
-  }, [])
+  }, []);
 
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <span className={styles.name}>{props.value.rName}</span>
         <span className={styles.star}>
-          {num?.map((value, idx) => (  
+          {num?.map((value, idx) => (
             <FontAwesomeIcon key={`${idx}review`} icon={faAward} />
           ))}
         </span>
